@@ -1,0 +1,1379 @@
+@charset "utf-8";
+
+/* ****************************************************************** 
+
+	--common.css--
+	
+	0. BoxModel change
+
+	1. Common setting
+		1-1. Reset styles
+		1-2. BoxModel styles
+		1-3. Text styles
+		1-4. Heading styles
+		1-5. Button styles
+		1-6. List styles
+		1-7. Table styles
+		1-8. Form styles
+		1-9. Other styles
+		1-99. VisualFormattingModel styles
+
+	2. Responsive setting
+		2-1. Fluid columns
+
+	99. SP
+
+****************************************************************** */
+
+/*==================================================================
+	0. BoxModel change
+===================================================================*/
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*==================================================================
+	1. Common setting
+===================================================================*/
+/* ------------------------------------------------------------------
+	1-1. Reset styles
+-------------------------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin: 0;
+	padding: 0;
+}
+fieldset { 
+	border: 0;
+}
+img { 
+	border-style: none;
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+}
+ol,ul {
+	list-style: none;
+}
+caption {
+	text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+q:before,q:after {
+	content: '';
+}
+abbr,acronym { 
+	border: 0;
+}
+table {
+	width: 100%;
+}
+
+/* ------------------------------------------------------------------
+	1-2. BoxModel styles
+-------------------------------------------------------------------*/
+.pt_0 { padding-top: 0 !important;}
+.pt_2 { padding-top: 2% !important;}
+.pt_4 { padding-top: 4% !important;}
+.pt_6 { padding-top: 6% !important;}
+.pt_8 { padding-top: 8% !important;}
+.pt_10 { padding-top: 10% !important;}
+.pb_0 { padding-bottom: 0 !important;}
+.pb_2 { padding-bottom: 2% !important;}
+.pb_4 { padding-bottom: 4% !important;}
+.pb_6 { padding-bottom: 6% !important;}
+.pb_8 { padding-bottom: 8% !important;}
+.pb_10 { padding-bottom: 10% !important;}
+.mt_0 { margin-top: 0 !important;}
+.mt_2 { margin-top: 2% !important;}
+.mt_4 { margin-top: 4% !important;}
+.mt_6 { margin-top: 6% !important;}
+.mt_8 { margin-top: 8% !important;}
+.mt_10 { margin-top: 10% !important;}
+.mb_0 { margin-bottom: 0 !important;}
+.mb_2 { margin-bottom: 2% !important;}
+.mb_4 { margin-bottom: 4% !important;}
+.mb_6 { margin-bottom: 6% !important;}
+.mb_8 { margin-bottom: 8% !important;}
+.mb_10 { margin-bottom: 10% !important;}
+
+/*
+.highlight_box {
+	padding: 3%;
+}
+*/
+
+.bg_sea { 
+	background: url(../img/bg_sea_top.jpg) no-repeat center top, url(../img/bg_sea_bottom.jpg) no-repeat center bottom, url(../img/bg_sea.jpg) repeat-y center top;
+	background-size: contain;
+}
+
+/*.bg_sand { background: url(../img/bg_sand.jpg) repeat center top;}*/
+
+/*
+.bg_gray { background: #f8f8f8;}
+.bg_blue { background: #e9f0f5;}
+
+.bd_gray { border-bottom: 1px solid #c9c9c9;}
+*/
+
+.align_left { text-align: left;}
+.align_right { text-align: right;}
+.align_center { text-align: center;}
+
+/* ------------------------------------------------------------------
+	1-3. Text styles
+-------------------------------------------------------------------*/
+/*
+.f12 { font-size: 0.55em;}
+.f14 { font-size: 0.64em;}
+.f16 { font-size: 0.73em;}
+.f18 { font-size: 0.82em;}
+.f20 { font-size: 0.9em;}
+.f22 { font-size: 1em;}
+.f24 { font-size: 1.09em;}
+.f26 { font-size: 1.18em;}
+.f28 { font-size: 1.27em;}
+.f30 { font-size: 1.36em;}
+.lh12 { line-height: 1.2;}
+.lh14 { line-height: 1.4;}
+.lh16 { line-height: 1.6;}
+.lh18 { line-height: 1.8;}
+.lh20 { line-height: 2;}
+*/
+.f_small { font-size: .5em;}
+.f_large { font-size: 1.2em;}
+
+.f_color_base { color: #003F54;}/* MAIN_COLOR */
+.f_color_sub { color: #166D8A;}
+
+/*
+.f_color_dred { color: #a8000e;}
+.f_color_yellow { color: #e5be54;}
+.f_color_lpurple { color: #be52a0;}
+.f_color_dblue { color: #2b6b9f;}
+*/
+
+
+/* ------------------------------------------------------------------
+	1-4. Heading styles
+-------------------------------------------------------------------*/
+.heading {
+	padding: 2% 0 4% 0;
+	text-align: center;
+}
+.heading.deco {
+	background: url(../img/deco.png) repeat-x bottom center;
+	margin-bottom: 4%;
+}
+.heading.card {
+	position: relative;
+}
+.heading.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -8%;
+	width: 20%;
+	height: 103px;
+	background: url(../img/deco_card_l.png) no-repeat;
+	background-size: contain;
+}
+.heading.card::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -8%;
+	width: 20%;
+	height: 103px;
+	background: url(../img/deco_card_r.png) no-repeat;
+	background-size: contain;
+}
+.heading_catch {
+	text-align: center;
+	font-weight: 600;
+	color: #166D8A;
+}
+.heading_title {
+	font-size: 32px;
+	line-height: 1.3;
+	color: #003F54;
+}
+.heading_title_sub {
+	margin-bottom: 3%;
+	font-size: 26px;
+	font-weight: 700;
+	color: #003F54;
+}
+
+/* ------------------------------------
+	Heading（type1）
+------------------------------------*/
+/*
+.heading_type_1 {
+	background: #eeeded;
+}
+.heading_type_1 h2 {
+	font-size: 1.64em;
+	line-height: 1.3;
+}
+*/
+
+
+/* ------------------------------------------------------------------
+	1-5. Button styles
+-------------------------------------------------------------------*/
+.btn_wrap {
+	text-align: center;
+	padding: 4% 0 6% 0;
+}
+.btn {
+	border: 3px solid #FFF;
+	border-radius: 100vh;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	padding: 25px 30px;
+	display: inline-block;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.3;
+	color: #fff;
+}
+
+
+/* 青グラデボタン */
+.btn_1 {
+	background-image: -webkit-gradient(linear, left top, right top, from(#0099CC), to(#89D6CA));
+	background-image: -webkit-linear-gradient(left, #0099CC 0%, #89D6CA 100%);
+	background-image: linear-gradient(to right, #0099CC 0%, #89D6CA 100%);
+}
+
+/* ピンクグラデボタン */
+.btn_2 {
+	background-image: -webkit-gradient(linear, left top, right top, from(#FFAE50), to(#FF1B96));
+	background-image: -webkit-linear-gradient(left, #FFAE50 0%, #FF1B96 100%);
+	background-image: linear-gradient(to right, #FFAE50 0%, #FF1B96 100%);
+}
+
+/* 青ボタン */
+.btn_3 {
+	background: #166D8A;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+/* ------------------------------------
+	幅固定タイプ
+------------------------------------*/
+.btn_fix {
+	width: 90%;
+	margin: 0 auto;
+	padding: 25px 0;
+}
+
+/* ------------------------------------------------------------------
+	1-7. Table styles
+-------------------------------------------------------------------*/
+.th_col2 {
+	width: 50%;
+}
+.th_col3 {
+	width: 33.3%;
+}
+.th_col4 {
+	width: 25%;
+}
+.th_col5 {
+	width: 20%;
+}
+.th_col6 {
+	width: 16.7%;
+}
+.th_col7 {
+	width: 14.3%;
+}
+.th_col8 {
+	width: 12.5%;
+}
+.th_col9 {
+	width: 11.1%;
+}
+.th_col10 {
+	width: 10%;
+}
+
+/* デフォルト */
+/*
+.table_01 {
+	background: #c9c9c9;
+}
+.table_01 th {
+	background: #f8f8f8;
+	padding: 3%;
+}
+.table_01 td {
+	background: #FFF;
+	padding: 3%;
+}
+*/
+
+/* ------------------------------------------------------------------
+	1-8. Form styles
+-------------------------------------------------------------------*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	font-family: inherit;
+	font-size: 18px;
+	/*line-height: 1.3;*/
+	vertical-align: middle;
+	/*
+	background: none;
+	border: none;
+	border-radius: 0;
+	*/
+}
+select::-ms-expand {
+	display: none;
+}
+/*textarea { font-size: inherit;}*/
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+	/*border: 1px solid #b70149;*/
+	transition: all 0.5s;
+	/*box-shadow: 0 0 1px 1px rgba(0,160,233,1);*/
+}
+
+/*-------------------------------*/
+/*	オートフィル時の背景色を無効に
+/*-------------------------------*/
+input:-webkit-autofill {
+	/* 色はinput要素の背景色（ここでは#fff）にそろえる */
+	box-shadow: 0 0 0px 999px #FFF inset;
+}
+
+/*-------------------------------*/
+/*	placeholder
+/*-------------------------------*/
+input::-webkit-input-placeholder {
+	color: #C7C7C7;
+}
+input::-moz-placeholder {
+	color: #C7C7C7;
+	opacity: 1;
+}
+input:-ms-input-placeholder {
+	color: #C7C7C7;
+}
+
+/*-------------------------------*/
+/*	項目名
+/*-------------------------------*/
+/*
+.form_subject {
+	margin-bottom: 3%;
+	color: #003F54;
+	font-size: 26px;
+	font-weight: 700;
+}
+*/
+
+/*-------------------------------*/
+/*	要素を横に並べる
+/*-------------------------------*/
+.form_inline {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.form_inline .form_inline_item:not(:first-child) {
+	margin-left: 2%;
+}
+.form_inline .form_inline_item.subject {
+	flex: 1;
+}
+/*
+.form_inline .form_inline_item.label {
+	font-size: 26px;
+}
+*/
+
+/*-------------------------------*/
+/*	text
+/*-------------------------------*/
+.form_text {
+	background: #FFF;
+	border: none;
+	border-radius: 20px;
+	padding: 4%;
+	width: 100%;
+}
+
+/* エラー時 */
+.form_text_error {
+	border: 1px solid #fe0000;
+}
+
+/*-------------------------------*/
+/*	textarea
+/*-------------------------------*/
+.form_textarea {
+	background: #FFF;
+	border: none;
+	border-radius: 20px;
+	padding: 4%;
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+}
+
+/* エラー時 */
+.form_textarea_error {
+	border: 1px solid #fe0000;
+}
+
+/*-------------------------------*/
+/*	select
+/*-------------------------------*/
+.form_select_wrap {
+	position: relative;
+}
+.form_select_wrap::before {
+	display: inline-block;
+	/*font-size: 20px;*/
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f0d7";
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	/*color: #B6BFC2;*/
+	pointer-events: none;
+	/*line-height: 1.4;*/
+	text-align: center;
+}
+.form_select {
+	background: #dcf3ef;
+	border: none;
+	border-radius: 10px;
+	padding: 15px 20px 15px 10px;
+	width: 100%;
+}
+
+/* エラー時 */
+.form_select_error {
+	border: 1px solid #fe0000;
+}
+
+/*-------------------------------*/
+/*	checkbox
+/*-------------------------------*/
+.form_checkbox {
+	display: none;
+}
+.form_checkbox_parts {
+	padding-left: 40px;
+	margin-right: 30px;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 1.8;
+	position: relative;
+}
+.form_checkbox_parts::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background: #FFF;
+	border: 1px solid #C2C2C2;
+	border-radius: 3px;
+}
+.form_checkbox:checked + .form_checkbox_parts::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 3px;
+	left: 10px;
+	width: 9px;
+	height: 16px;
+	transform: rotate(40deg);
+	border-bottom: 3px solid #438D46;
+	border-right: 3px solid #438D46;
+}
+
+/*-------------------------------*/
+/*	radio
+/*-------------------------------*/
+.form_radio {
+	display: none;
+}
+.form_radio + label {
+	padding-left: 35px;
+	margin-right: 30px;
+	display: inline-block;
+	line-height: 1.8;
+	position: relative;
+}
+.form_radio + label::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background: #FFF;
+	border: 1px solid #999;
+	border-radius: 50%;
+}
+.form_radio:checked + label::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translate(50%,-50%);
+	-ms-transform: translate(50%,-50%);
+	transform: translate(50%,-50%);
+	width: 15px;
+	height: 15px;
+	background: #438D46;
+	border-radius: 50%;
+}
+
+/*-------------------------------*/
+/*	button
+/*-------------------------------*/
+/*
+.form_btn_wrap {
+	margin: 30px 0;
+	text-align: center;
+}
+.form_btn {
+	background: #438D46;
+	border: 1px solid #438D46;
+	border-radius: 50px;
+	padding: 20px 60px;
+	display: inline-block;
+	font-size: 30px;
+	color: #FFF;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+.form_btn:hover {
+	background: #FFF;
+	color: #438D46;
+}
+.form_btn:not(:first-child) {
+	margin-left: 10px;
+}
+*/
+
+/* オリジナルボタン1 */
+/*
+.form_btn_02 {
+	background: #EA7E30;
+	border: 1px solid #EA7E30;
+}
+*/
+
+/* サイズ固定 */
+/*
+.form_btn_fix {
+	padding: 20px 0;
+	width: 420px;
+}
+*/
+
+/*-------------------------------*/
+/*	戻る（リンク）
+/*-------------------------------*/
+/*
+.form_back {
+	text-align: center;
+}
+.form_back a {
+	color: inherit;
+	text-decoration: underline;
+}
+*/
+
+/*-------------------------------*/
+/*	assist
+/*-------------------------------*/
+/*
+.form_assist {
+	margin-top: 10px;
+	font-size: 12px;
+}
+*/
+
+/*-------------------------------*/
+/*	フォーム内各種文言
+/*-------------------------------*/
+/*
+.form_info {
+	padding: 100px 0;
+	text-align: center;
+	font-size: 20px;
+}
+.form_info_title {
+	margin-bottom: 30px;
+	font-size: 30px;
+}
+*/
+
+/* ------------------------------------------------------------------
+	1-9. Other styles
+-------------------------------------------------------------------*/
+/*-------------------------------*/
+/*	Breadcrumb
+/*-------------------------------*/
+.breadcrumb {
+	margin: 0 5% 2% 5%;
+	display: flex;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+.breadcrumb li {
+	font-size: 14px;
+}
+.breadcrumb li:not(:first-child):before {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f105";
+	margin: 0 5px;
+}
+.breadcrumb a {
+	color: inherit;
+}
+
+/*-------------------------------*/
+/*	PAGETOP
+/*-------------------------------*/
+.page_top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 90px;
+	height: 90px;
+	background: #FFF;
+	background: rgba(22, 109, 138, .7);
+	border-radius: 100vh;
+	z-index: 10;
+	cursor: pointer;
+}
+.page_top_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	text-align: center;
+	font-size: 36px;
+	line-height: 1;
+	color: #FFF;
+}
+.page_top_text {
+	margin-top: 3px;
+	font-size: 14px;
+}
+
+/* ------------------------------------
+	タグクラウド
+------------------------------------*/
+.tag_cloud {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 24px;
+	&.hide_tag{
+	}
+}
+.tag_cloud > li {
+	margin: 0 3% 3% 0;
+}
+.tag_cloud a {
+	background: #FFF;
+	border-radius: 100vh;
+	display: block;
+	padding: 15px 20px;
+	color: #166D8A;
+	&.active{
+		background: #F3FF69;
+	}
+}
+.tag_cloud a::before {
+	content: "#";
+	margin-right: 5px;
+}
+
+
+
+/* ------------------------------------
+	タグリスト
+------------------------------------*/
+.tag_list {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 24px;
+	font-weight: 600;
+}
+.tag_list > li {
+	margin: 0 3% 3% 0;
+}
+.tag_list a {
+	color: #166D8A;
+}
+.tag_list a::before {
+	content: "#";
+	margin-right: 5px;
+}
+
+/* ------------------------------------
+	カテゴリリスト
+------------------------------------*/
+.cat_list {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+.cat_list > li {
+	margin: 0 1% 2% 0;
+}
+.cat_list a {
+	background: #FFF;
+	border-radius: 5px;
+	display: block;
+	padding: 5px;
+	color: #003F54;
+}
+
+/* ------------------------------------
+	カードリスト
+------------------------------------*/
+.card_list {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 24px;
+}
+.card_list > li {
+	margin: 0 2% 5% 0;
+	width: calc( ( 100% - 6% ) / 4 );
+	text-align: center;
+}
+.card_list > li:nth-child(4n) {
+	margin-right: 0;
+}
+.card_list a {
+	color: inherit;
+}
+.card_list img {
+	border-radius: 5px;
+}
+
+/*-------------------------------*/
+/*	SNSアイコン
+/*-------------------------------*/
+.share_list {
+	display: flex;
+	justify-content: center;
+}
+.share_item {
+	font-size: 40px;
+	line-height: 1;
+	position: relative;
+}
+.share_item:not(:first-child) {
+	margin-left: 3%;
+}
+.share_item a {
+	background: #FFF;
+	border-radius: 100vh;
+	text-align: center;
+	display: block;
+	width: 80px;
+	height: 80px;
+	color: inherit;
+}
+.share_item i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+/* Facebook */
+.share_icon_fb {
+	
+}
+/* LINE */
+.share_icon_li {
+}
+
+/*-------------------------------*/
+/*	タブ切り替え
+/*-------------------------------*/
+.tab {
+	display: flex;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+}
+.tab_btn {
+	background: #003F54;
+	margin: 0 1% 1% 0;
+	width: calc( ( 100% - 2% ) / 3 );
+	padding: 3% 0;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	color: #FFF;
+	transition: .2s;
+	cursor: pointer;
+}
+.tab_btn a,.btn a{
+	color: #fff;
+}
+.tab_btn:nth-child(3n) {
+	margin-right: 0;
+}
+.tab_btn.active {
+	background: #FFF;
+	color: #003F54;
+}
+.tab_btn.active a{
+	color: #003F54;
+}
+.tab_panel {
+	display: none;
+}
+.tab_panel_show {
+	display: block;
+}
+
+/*-------------------------------*/
+/*	Pagenation
+/*-------------------------------*/
+.pagenation {
+	padding: 8% 0;
+}
+.pagenation_nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+/*
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+*/
+}
+.pagenation_nav li {
+	margin-bottom: 3%;
+	font-size: 20px;
+}
+.pagenation_nav li:not(:last-child) {
+	margin: 0 3% 3% 0;
+}
+.pagenation_nav li span {
+	padding: 15px 0;
+	display: block;
+	color: #166D8A;
+	line-height: 1;
+}
+.pagenation_nav li span.current {
+	background: #166D8A;
+	border: 1px solid #166D8A;
+	border-radius: 10px;
+	padding: 15px 20px;
+	color: #FFF;
+	font-weight: bold;
+}
+.pagenation_nav a {
+	background: #FFF;
+	border: 1px solid #166D8A;
+	border-radius: 10px;
+	padding: 15px 20px;
+	color: #166D8A;
+	display: block;
+	text-decoration: none;
+	line-height: 1;
+}
+
+/* ------------------------------------
+	可変リスト
+------------------------------------*/
+.flex_list {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+.flex_list > li {
+	margin: 0 3% 3% 0;
+	text-align: center;
+}
+.flex_list a {
+	background: #dcf3ef;
+	border-radius: 10px;
+	display: block;
+	padding: 15px 0;
+	color: #166D8A;
+}
+.flex_list > li.active a {
+	background: #89D6CA;
+}
+
+/* 2つ並び */
+.flex_list_2 > li {
+	width: calc( ( 100% - 3% ) / 2 );
+}
+.flex_list_2 > li:nth-child(2n) {
+	margin-right: 0;
+}
+
+/* 4つ並び */
+.flex_list_4 > li {
+	width: calc( ( 100% - 9% ) / 4 );
+}
+.flex_list_4 > li:nth-child(4n) {
+	margin-right: 0;
+}
+
+/* ------------------------------------
+	モーダル
+------------------------------------*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 8887;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+/*transition: all 1s ease-in-out;*/
+}
+.modal-content {
+	background: #FFF;
+	border-radius: 20px;
+    /*overflow-y: scroll;*/
+/*padding: 20px 25px;*/
+padding: 30px;
+	width: 90%;
+max-width: 576px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/*max-height: 400px;*/
+max-height: 90vh;
+/*max-height: 80vh;*/
+    /*animation: show 0.6s linear 0s;*/
+/*filter: drop-shadow(0px 2px 6px #777);*/
+}
+.modal-head {
+text-align: right;
+margin-bottom: 20px;
+/*
+    display: inline-block;
+    position: absolute;
+right: 5%;
+top: 4%;
+*/
+}
+.modal-body {
+max-height: 75vh;
+overflow-y: scroll;
+}
+.js_modal-close {
+/*
+    color: #FF0000;
+    text-decoration: none;
+*/
+font-size: 24px;
+    line-height: 1;
+font-weight: 700;
+/*
+    padding: 0 8px;
+*/
+}
+/*
+.js_modal-close:hover, .js_modal-close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+*/
+/*
+.modal-title {
+  color: #FFF;
+}
+*/
+/*
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+*/
+
+/* ------------------------------------------------------------------
+	1-99. VisualFormattingModel styles
+-------------------------------------------------------------------*/
+.pc_block{
+	display: block !important;
+}
+.pc_inline{
+	display: inline !important;
+}
+.sp_block{
+	display: none !important;
+}
+.sp_inline{
+	display: none !important;
+}
+
+/* ------------------------------------
+	CLEARFIX
+------------------------------------*/
+.cf:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+
+
+
+
+
+/*==================================================================
+	2 Responsive setting
+===================================================================*/
+
+/* ------------------------------------------------------------------
+	2-1. Fluid columns
+-------------------------------------------------------------------*/
+/* 初期設定 */
+.fluid_col {
+	font-size: 0;
+}
+.fluid_col_item {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 24px;
+	margin-bottom: 2%;
+}
+@media only screen and (max-width: 639px) {
+	.fluid_col_item {
+		font-size: 3.75vw;
+	}
+}
+
+.fluid_col_02 .fluid_col_item { width: 49%; margin-right: 2%;}/* 横並びに等分 */
+.fluid_col_03 .fluid_col_item { width: 32%; margin-right: 2%;}/* 横並びに3等分 */
+.fluid_col_04 .fluid_col_item { width: 23.87%; margin-right: 1.5%;}/* 横並びに4等分 */
+.fluid_col_05 .fluid_col_item { width: 18.8%; margin-right: 1.5%;}/* 横並びに5等分 */
+.fluid_col_06 .fluid_col_item { width: 15.41%; margin-right: 1.5%;}/* 横並びに6等分 */
+.fluid_col_07 .fluid_col_item { width: 13%; margin-right: 1.5%;}/* 横並びに7等分 */
+.fluid_col_08 .fluid_col_item { width: 11.18%; margin-right: 1.5%;}/* 横並びに8等分 */
+.fluid_col_09 .fluid_col_item { width: 9.77%; margin-right: 1.5%;}/* 横並びに9等分 */
+	
+.fluid_col_02 .fluid_col_item:nth-child(2n),
+.fluid_col_03 .fluid_col_item:nth-child(3n),
+.fluid_col_04 .fluid_col_item:nth-child(4n),
+.fluid_col_05 .fluid_col_item:nth-child(5n),
+.fluid_col_06 .fluid_col_item:nth-child(6n),
+.fluid_col_07 .fluid_col_item:nth-child(7n),
+.fluid_col_08 .fluid_col_item:nth-child(8n),
+.fluid_col_09 .fluid_col_item:nth-child(9n) {
+	margin-right: 0;
+}
+
+
+
+.dispnone{
+	display: none;
+}
+	
+
+
+
+
+
+
+/*==================================================================
+	99 SP
+===================================================================*/
+
+@media only screen and (max-width: 640px) {
+	
+/*==================================================================
+	1. Common setting
+===================================================================*/
+/* ------------------------------------------------------------------
+	1-2. BoxModel styles
+-------------------------------------------------------------------*/
+	
+/* ------------------------------------------------------------------
+	1-3. Text styles
+-------------------------------------------------------------------*/
+	
+/* ------------------------------------------------------------------
+	1-4. Heading styles
+-------------------------------------------------------------------*/
+.heading.card::before {
+height: 16.15vw;
+}
+.heading.card::after {
+height: 16.15vw;
+}
+.heading_catch {
+font-size: 3.08vw;
+}
+.heading_title {
+font-size: 5.13vw;
+}
+.heading_title_sub {
+font-size: 4.11vw;
+}
+
+/* ------------------------------------------------------------------
+	1-5. Button styles
+-------------------------------------------------------------------*/
+.btn {
+padding: 5% 6%;
+font-size: 5.13vw;
+}
+
+/* 青ボタン */
+.btn_3 {
+font-size: 4.62vw;
+}
+
+/* ------------------------------------
+	幅固定タイプ
+------------------------------------*/
+.btn_fix {
+padding: 5% 0;
+}
+
+/* ------------------------------------------------------------------
+	1-8. Form styles
+-------------------------------------------------------------------*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+font-size: 16px;
+}
+
+
+/* ------------------------------------------------------------------
+	1-9. Other styles
+-------------------------------------------------------------------*/
+/*-------------------------------*/
+/*	Breadcrumb
+/*-------------------------------*/
+.breadcrumb li {
+font-size: 2.57vw;
+}
+/*-------------------------------*/
+/*	PAGETOP
+/*-------------------------------*/
+.page_top {
+	bottom: 2%;
+	right: 3%;
+	width: 15.38vw;
+	height: 15.38vw;
+	}
+	.page_top_icon {
+	font-size: 5.13vw;
+	}
+	.page_top_text {
+	font-size: 2.31vw;
+	}
+	
+/* ------------------------------------
+	タグクラウド
+------------------------------------*/
+.tag_cloud {
+font-size: 3.59vw;
+}
+.tag_cloud a {
+	padding: 2.56vw 5.13vw;
+	
+}
+
+/* ------------------------------------
+	タグリスト
+------------------------------------*/
+.tag_list {
+font-size: 3.59vw;
+}
+
+/* ------------------------------------
+	カテゴリリスト
+------------------------------------*/
+.cat_list {
+font-size: 3.59vw;
+}
+
+/* ------------------------------------
+	カードリスト
+------------------------------------*/
+.card_list {
+font-size: 3.59vw;
+}
+
+/*-------------------------------*/
+/*	SNSアイコン
+/*-------------------------------*/
+
+
+
+/*-------------------------------*/
+/*	タブ切り替え
+/*-------------------------------*/
+.tab_btn {
+font-size: 3.59vw;
+}
+
+/*-------------------------------*/
+/*	ページネーション
+/*-------------------------------*/
+.pagenation_nav li {
+font-size: 3.59vw;
+}
+.pagenation_nav li span {
+padding: 3.85vw 0;
+}
+.pagenation_nav li span.current {
+padding: 3.85vw;
+}
+.pagenation_nav a {
+padding: 3.85vw;
+}
+
+/* ------------------------------------
+	可変リスト
+------------------------------------*/
+.flex_list {
+font-size: 5.13vw;
+}
+.flex_list a {
+padding: 3.08vw 0;
+}
+
+/* ------------------------------------
+	モーダル
+------------------------------------*/
+.modal-content {
+padding: 5%;
+max-width: 100%;
+	max-height: 90vh;
+}
+.modal-head {
+margin-bottom: 3%;
+}
+.modal-body {
+	max-height: 75vh;
+}
+.js_modal-close {
+font-size: 4.62vw;
+}
+
+/* ------------------------------------------------------------------
+	1-99. VisualFormattingModel styles
+-------------------------------------------------------------------*/
+.pc_block {
+	display: none !important;
+}
+.pc_inline {
+	display: none !important;
+}
+.sp_block {
+	display: block !important;
+}
+.sp_inline {
+	display: inline-block !important;
+}
+
+	
+	
+	
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

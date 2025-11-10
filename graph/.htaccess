@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName “pv”
+AuthUserFile /var/www/html/dev/.htpasswd
+require valid-user

@@ -1,0 +1,2534 @@
+@charset "utf-8";
+
+/* ******************************************************************
+
+	--style.css--
+
+	1. Style setting
+		1-1. Base styles
+		1-2. Structure styles
+
+	2. Layout setting
+		2-1. Header styles
+			2-1_1. SpNavi
+		2-2. GlobalNavi styles
+		2-3. Main styles
+		2-4. Footer styles
+		2-5. Page styles
+		
+	98. AD setting（広告）
+	99. SP
+
+****************************************************************** */
+
+/*==================================================================
+	1. Base setting
+===================================================================*/
+/* ------------------------------------------------------------------
+	1-1. Base styles
+-------------------------------------------------------------------*/
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 18px;
+	font-weight: 400;/* Noto Sans JP Regular */
+	line-height: 1.6;
+	color: #333;
+	scroll-behavior:smooth;
+	padding-bottom: 3em;/* 固定メニューで隠れるため */
+}
+
+a { color: #F22B8F; text-decoration: none;}
+a.underline { text-decoration: underline;}
+
+/* ------------------------------------------------------------------
+	1-2. Structure styles
+-------------------------------------------------------------------*/
+.container {
+	background: #f6f5ee;
+	max-width: 640px;
+	margin: 0 auto;
+}
+.main {
+	/*padding: 3% 0;*/
+}
+.inner {
+	padding: 0 5%;
+}
+.bg_sea .inner {
+	padding: 5%;
+}
+
+/*==================================================================
+	2. Layout setting
+===================================================================*/
+
+/* ------------------------------------------------------------------
+	2-1. Header styles
+-------------------------------------------------------------------*/
+.header {
+	background: url(../img/header_img.png) no-repeat center top;
+	background-size: contain;
+	width: 100%;
+	height: 164px;
+}
+.logo {
+	width: 55%;
+	padding: 2% 0 0 4%;
+}
+
+/* ------------------------------------------------------------------
+	2-1_1. SpNavi
+-------------------------------------------------------------------*/
+#sp_nav.modal {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+#sp_nav .modal-content {
+	max-height: 80vh;
+}
+#sp_nav .modal-head {
+	background: #FFF;
+	border: 2px solid #000;
+	border-radius: 100vh;
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	right: 0;
+	top: -45px;
+}
+#sp_nav .js_modal-close {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 40px;
+}
+#sp_nav .modal-body {
+	max-height: 70vh;
+}
+.sp_nav_list {
+	font-size: 24px;
+	color: #003F54;
+}
+.sp_nav_list a {
+	color: inherit;
+}
+.sp_nav_item {
+	border-bottom: 1px solid #89D6CA;
+	padding: 3% 0;
+}
+/* ハンバーガーメニューー */
+.hamburger {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 90px;
+	height: 90px;
+	background: #FFF;
+	border: 2px solid #166D8A;
+	border-radius: 100vh;
+	z-index: 10;
+	cursor: pointer;
+}
+.hamburger_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	text-align: center;
+	font-size: 36px;
+	line-height: 1;
+	color: #166D8A;
+}
+.hamburger_text {
+	margin-top: 3px;
+	font-size: 14px;
+}
+
+/* ------------------------------------------------------------------
+	2-2. GlobalNavi styles
+-------------------------------------------------------------------*/
+.gnav {
+	padding: 3% 0;
+}
+.gnav a {
+	color: inherit;
+}
+.gnav_list {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 90%;
+}
+.gnav_item {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 500;
+}
+.gnav_item:not(:last-child) {
+	margin-right: 3%;
+}
+
+.gnav.fixed {
+	position: fixed;
+	width: 100%;
+	max-width: 640px;
+	bottom: 0;
+	z-index: 1000;
+	background: #f6f5ee;
+	padding: 1% 0;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, .15);
+	/*transition: all 0.3s ease 0s;*/
+}
+.gnav.fixed .gnav_item img {
+	width: 70px;
+}
+
+/* ------------------------------------------------------------------
+	2-3. Main styles
+-------------------------------------------------------------------*/
+.section {
+	margin: 5% 0 8% 0;
+	position: relative;
+}
+.section.deco {
+	margin: 100px 0 8% 0;
+}
+.section.deco::before {
+	content: "";
+	position: absolute;
+	top: -71px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 72px;
+	background: url(../img/deco_card.png) no-repeat top center;
+	background-size: contain;
+}
+.section_icon {
+	display: flex;
+	position: absolute;
+	top: -15px;
+	left: 20px;
+	line-height: 1;
+	color: #FFF;
+	z-index: 10;
+}
+.section_icon_item {
+	background: #166D8A;
+	border: 1px solid #FFF;
+	border-radius: 100vh;
+	padding: 5px 20px;
+	white-space: nowrap;
+}
+.section_icon_item:not(:first-child) {
+	margin-left: 3%;
+}
+.section_icon_item a{
+	color: #fff;
+}
+
+.rounded_box {
+	background: #FFF;
+	border-radius: 20px;
+	padding: 4%;
+}
+.box_card {
+	background: #FFF;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.box_card_img.movie {
+	width: 100%;
+	padding-top: 56.25%;
+	position: relative;
+}
+.box_card_img.movie iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.box_card_head {
+	position: relative;
+}
+.box_card_title {
+	position: absolute;
+	font-size: 32px;
+	line-height: 1.3;
+}
+.box_card_title_sub {
+	font-size: 14px;
+}
+.box_card_body {
+	padding: 4%;
+}
+/*
+.box_card iframe{
+	width: 100%;
+	height: 200px;
+}
+*//* 別途style準備したので削除 */
+.free_icon {
+	border: 1px dashed #003F54;
+	border-radius: 100vh;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 8px;
+	width: 58px;
+	height: 58px;
+	font-size: 16px;
+	line-height: 54px;
+}
+
+.pr_text {
+	font-weight: 700;
+}
+
+/* ------------------------------------------------------------------
+	2-4. Footer styles
+-------------------------------------------------------------------*/
+.footer {
+	background: #166D8A url(../img/bg_footer.jpg) no-repeat center top;
+	background-size: contain;
+	padding: 200px 5% 5%  5%;
+	text-align: center;
+	color: #FFF;
+}
+.footer a {
+	color: inherit;
+}
+.footer .share_icon {
+	text-align: center;
+}
+.fnav {
+	padding: 10% 0 5% 0;
+	text-align: center;
+}
+.fnav_sub {
+	background: #43bbce;
+	border-radius: 20px;
+	padding: 4% 8%;
+	margin-bottom: 5%;
+}
+.fnav_sub_title {
+	background: url(../img/deco.png) repeat-x bottom center;
+	padding-bottom: 3%;
+	margin-bottom: 3%;
+	font-size: 24px;
+	font-weight: 600;
+}
+.fnav > li,
+.fnav_rec > li{
+	padding: 2% 0;
+	font-weight: 600;
+}
+.copyright {
+	font-size: 12px;
+}
+
+/* ------------------------------------------------------------------
+	2-5. Page styles
+-------------------------------------------------------------------*/
+
+/* ▼▼▼ここに各コーダーが別途作成したCSS内のスタイルをドッキングしていく▼▼▼ */
+/* ------------------------------------
+	トップページここから
+------------------------------------*/
+.mv {
+	position: relative;
+	overflow: hidden;
+}
+.mv_item {
+	position: absolute;
+}
+.mv_catch {
+	top: 40px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	color: #FFF;
+}
+.mv_logo {
+	top: 60px;
+	left: 0;
+	right: 0;
+	width: 87%;
+	margin: 0 auto;
+}
+.mv_lead {
+	top: 170px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	width: 55%;
+	background: #283071;
+	border-radius: 100vh;
+	padding: 12px 0;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+	color: #FFF;
+}
+.mv_item_1 {
+	top: 480px;
+	left: 0;
+	width: 100%;
+}
+.mv_item_1 img {
+	width: 18%;
+	animation: infinity-scroll-left 40s infinite linear;
+}
+.mv_item_2 {
+	bottom: 125px;
+	left: -100px;
+	width: 54%;
+}
+.mv_item_3 {
+	bottom: 200px;
+	right: 20px;
+	width: 12%;
+}
+.mv_item_4 {
+	bottom: 0;
+	right: 200px;
+	width: 20%;
+}
+.mv_item_5 {
+	bottom: 110px;
+	left: 150px;
+	width: 40%;
+}
+.mv_item_6 {
+	bottom: 60px;
+	right: 30px;
+	width: 35%;
+}
+.mv_item_7 {
+	bottom: -20px;
+	left: 0;
+	width: 32%;
+}
+.mv_item_8 {
+	bottom: 20px;
+	right: 20px;
+	width: 21%;
+}
+@keyframes infinity-scroll-left {
+	from {
+		transform: translateX(550%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+/* みんなのレビュー */
+.review_card {
+	background: #F6F5EE;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.review_card a {
+	display: block;
+	color: inherit;
+}
+.review_card_head {
+	position: relative;
+}
+.review_card_menu {
+	position: absolute;
+	top: 50%;
+	right: 16%;
+	transform: translateY(-50%);
+	width: 40%;
+	font-size: 26px;
+	line-height: 1.3;
+}
+.review_card_body {
+	padding: 4%;
+}
+
+/* みんなのレビュー_swiperのスタイルを上書き */
+#review_slide .swiper-pagination {
+	position: static;
+	text-align: right;
+	margin-top: 2%;
+}
+#review_slide .swiper-pagination-bullet {
+	background: #ABDCED;
+	width: 12px;
+	height: 12px;
+	margin: 0 8px;
+	opacity: 1;
+	vertical-align: middle;
+}
+#review_slide .swiper-pagination-bullet-active {
+	background: #166D8A;
+	width: 24px;
+	height: 24px;
+}
+
+/* ランキング */
+.section_ranking { }
+.section_ranking .tile_menu {
+	flex-wrap: nowrap;
+}
+.section_ranking .tile_menu_item {
+	counter-increment: counter 1;
+}
+.section_ranking .tile_menu_item a:before {
+	content: counter(counter);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #166D8A;
+	width: 38px;
+	height: 38px;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 38px;
+	color: #FFF;
+	z-index: 10;
+}
+.section_ranking .tile_menu_catch {
+	top: 20%;
+}
+
+/* ランキング_swiperのスタイルを上書き */
+#ranking_slide .swiper-pagination {
+	position: static;
+	text-align: right;
+	margin-top: 2%;
+}
+#ranking_slide .swiper-pagination-bullet {
+	background: #ABDCED;
+	width: 12px;
+	height: 12px;
+	margin: 0 8px;
+	opacity: 1;
+	vertical-align: middle;
+}
+#ranking_slide .swiper-pagination-bullet-active {
+	background: #166D8A;
+	width: 24px;
+	height: 24px;
+}
+
+/* 話題のキーワード */
+.section.section_popular_tag {
+	background: #003F54;
+	position: relative;
+	padding-bottom: 10%;/* 「もっと見る」のスペース確保 */
+	&.specified{
+		
+	}
+	.keyword_more{
+		position: absolute;
+		bottom: 0;
+		background: #89D6CA;
+		text-align: center;
+		width: 100%;
+		left: 0;
+		cursor: pointer;
+		border-radius: 0px 0px 20px 20px;
+		padding: 0.5em 0;
+	}
+}
+.section.section_popular_tag .heading_catch {
+	color: #F3FF69;
+}
+.section.section_popular_tag .heading_title {
+	color: #FFF;
+}
+.section_popular_tag{
+	
+}
+
+/* HoloHoloタロットについて */
+.section_about {
+	background: url(../img/sand_head.jpg) no-repeat center top, url(../img/bg_sand.jpg) repeat center top;
+	margin-top: 5%;
+}
+.about_img {
+	width: 70%;
+	margin: 0 auto;
+}
+.about_body {
+	padding: 2% 5% 0 5%;
+}
+.about_text {
+	background: rgba(255,255,255,.7);
+	border-radius: 20px;
+	padding: 4%;
+	text-align: center;
+}
+
+@media only screen and (max-width: 640px) {
+	.mv_catch {
+	top: 7.69vw;
+	font-size: 2.57vw;
+	}
+	.mv_logo {
+	top: 10.26vw;
+	}
+	.mv_lead {
+	top: 26.92vw;
+	width: 58%;
+	padding: 2.56vw 0;
+	font-size: 2.57vw;
+	}
+	.mv_item_1 {
+	top: 76.15vw;
+	}
+	.mv_item_2 {
+	bottom: 17.95vw;
+	left: -16.67vw;
+	}
+	.mv_item_3 {
+	bottom: 30.77vw;
+	right: 2.56vw;
+	}
+	.mv_item_4 {
+	bottom: 0;
+	right: 30.77vw;
+		
+	}
+	.mv_item_5 {
+	bottom: 17.95vw;
+	left: 24.36vw;
+	}
+	.mv_item_6 {
+	bottom: 10.26vw;
+	right: 3.85vw;
+	}
+	.mv_item_7 {
+	bottom: -2.56vw;
+	}
+	.mv_item_8 {
+	bottom: 3.85vw;
+	right: 2.56vw;
+	}
+
+	/* みんなのレビュー */
+	.review_card_menu {
+	font-size: 4.11vw;
+	}
+	/* みんなのレビュー_swiperのスタイルを上書き */
+	#review_slide .swiper-pagination-bullet {
+	width: 2.05vw;
+	height: 2.05vw;
+	margin: 0 1.28vw;
+	}
+	#review_slide .swiper-pagination-bullet-active {
+	width: 4.10vw;
+	height: 4.10vw;
+	}
+	
+	/* ランキング */
+	.section_ranking .tile_menu_item a:before {
+	width: 6.15vw;
+	height: 6.15vw;
+	font-size: 5.13vw;
+	line-height: 6.15vw;
+	}
+	
+	/* ランキング_swiperのスタイルを上書き */
+	#ranking_slide .swiper-pagination-bullet {
+	width: 2.05vw;
+	height: 2.05vw;
+	margin: 0 1.28vw;
+	}
+	#ranking_slide .swiper-pagination-bullet-active {
+	width: 4.10vw;
+	height: 4.10vw;
+	}
+
+	/* HoloHoloタロットについて */
+	.section_about {
+	background-size: 100%;
+	}
+
+}
+
+
+/* ------------------------------------
+	トップページここまで
+------------------------------------*/
+
+/* ------------------------------------
+	奥階層共通パーツここから
+------------------------------------*/
+/* フッターSNSパート */
+.section_sns {
+	background: url(../img/sand_head.jpg) no-repeat center top, url(../img/bg_sand.jpg) repeat center top;
+	padding-top: 15%;
+}
+
+@media only screen and (max-width: 640px) {
+	.section_sns {
+	background-size: 100%;
+	}
+}
+
+/* ------------------------------------
+	奥階層共通パーツここまで
+------------------------------------*/
+
+/* ------------------------------------
+	カテゴリ系ここから
+------------------------------------*/
+/* TOP_カテゴリー毎メニュー */
+.section_category { }
+/*
+.section_category .heading {
+	padding: 2% 0 2% 0;
+}
+*/
+.section_category .heading.card::before {
+	left: -3%;
+	width: 22%;
+	height: 123px;
+}
+.section_category .heading.card::after {
+	right: -3%;
+	width: 22%;
+	height: 123px;
+}
+.section_category .heading_img {
+	width: 16%;
+	margin: 0 auto -5% auto;
+}
+.category_box {
+	background: #FFF;
+	border-radius: 20px;
+	margin-bottom: 8%;
+	overflow: hidden;
+}
+.category_head {
+	position: relative;
+}
+.category_more {
+	position: absolute;
+	left: 3%;
+	bottom: 10%;
+}
+.category_more a {
+	background: #003F54;
+	border-radius: 100vh;
+	display: block;
+	padding: 20px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #FFF;
+}
+.category_body {
+	padding: 4%;
+}
+.category_catch {
+	text-align: center;
+	margin-bottom: 3%;
+	font-weight: 600;
+	color: #166D8A;
+}
+.category_caption {
+	background: #FFF;
+	border-radius: 20px;
+	padding: 4%;
+	margin-bottom: 3%;
+}
+.section_category .category_caption {
+	background: #dcf3ef;
+}
+
+/* カテゴリTOP */
+.section_category_top {
+	background: url(../img/deco_flower.png) no-repeat center bottom;
+	padding-bottom: 150px;
+	background-size: 75%;
+}
+.section_category_top .box_card {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+/* キーワード検索 */
+.search_keyword {
+	border: 2px solid #166D8A;
+	display: flex;
+}
+.search_keyword_text {
+	border: none;
+	padding: 4%;
+	width: 100%;
+	flex: 1;
+}
+.search_keyword_button {
+	background: #166D8A;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f002";
+	color: #FFF;
+	width: 80px;
+	font-size: 32px;
+}
+
+/* 各カテゴリ一覧 */
+/* infinite-scrollのスタイル調整 */
+#infscr-loading {
+	width: 100%;
+	text-align: center;
+	margin: 3% auto;
+}
+#infscr-loading img {
+	width: 40px;/*ローディング画像のサイズ*/
+}
+
+@media only screen and (max-width: 640px) {
+	/* TOP_カテゴリー毎メニュー */
+	.section_category .heading.card::before {
+	height: 19.49vw;
+	}
+	.section_category .heading.card::after {
+	height: 19.49vw;
+	}
+	.category_more a {
+	padding: 3.85vw;
+	font-size: 3.59vw;
+	}
+
+	/* カテゴリTOP */
+	.section_category_top {
+	padding-bottom: 23.08vw;
+	}
+	
+	/* キーワード検索 */
+	.search_keyword_button {
+	width: 15.38vw;
+	font-size: 5.13vw;
+	}
+	
+	/* 各カテゴリ一覧 */
+	/* infinite-scrollのスタイル調整 */
+	#infscr-loading img {
+	width: 12.82vw;
+	}
+	
+}
+
+/* ------------------------------------
+	カテゴリ系ここまで
+------------------------------------*/
+
+/* ------------------------------------
+	ラキタロットここから
+------------------------------------*/
+/* TOP_ラキタロット */
+.spread_laki {
+	position: relative;
+	margin-bottom: 3%;
+}
+.spread_laki_item {
+	position: absolute;
+	width: 32%;
+}
+.spread_laki .card_1 {
+	/* top: 6%;
+	left: 16%; */
+}
+.spread_laki .card_2 {
+	/* top: 6%;
+	right: 16%; */
+}
+.spread_laki .card_3 {
+	/* bottom: 5%;
+	left: 16%; */
+}
+.spread_laki .card_4 {
+	/* bottom: 5%;
+	right: 16%; */
+}
+.spread_laki {
+    position: relative;
+    /* width: 100%;
+    height: 500px; */
+    overflow: hidden;
+}
+
+.spread_laki_item {
+    width: 32%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+    animation-play-state: paused; 
+}
+
+.spread_laki .card_1 {
+    animation-name: moveToTopLeft;
+}
+
+.spread_laki .card_2 {
+    animation-name: moveToTopRight;
+}
+
+.spread_laki .card_3 {
+    animation-name: moveToBottomLeft;
+}
+
+.spread_laki .card_4 {
+    animation-name: moveToBottomRight;
+}
+
+
+@keyframes moveToTopLeft {
+    to {
+        top: 6%;
+        left: 16%;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes moveToTopRight {
+    to {
+        top: 6%;
+        left: 84%;/* right:16%だと初期のtransform: translate(-50%, -50%);の影響で意図しない配置になる */
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes moveToBottomLeft {
+    to {
+        top: 94%;
+        left: 16%;
+        transform: translate(0, -100%);
+    }
+}
+
+@keyframes moveToBottomRight {
+    to {
+        top: 94%;
+        left: 84%;
+        transform: translate(-100%, -100%);
+    }
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+.shuffle_end{
+    display: none;
+}
+
+.card_back {
+    display: block;
+    position: absolute;
+    width: 15%;
+    /* top: 0;
+    left: 0; */
+    transition: transform 0.5s ease-in-out;
+}
+.go_result{
+	display: none;
+}
+/* ラキタロット_結果 */
+.result_laki_card {
+	position: relative;
+	margin-bottom: 3%;
+}
+.result_laki_card_item {
+	position: absolute;
+	width: 60%;
+	top: 7%;/* 元のCSSでtransformを併用している関係でアニメでの上下中央(top:50%,translate-50%)が効かないためtranslateを使わない指定で中央に近づける */
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: inline-block;
+	perspective: 1000px;
+}
+.card_inner {
+	transform-style: preserve-3d;
+	transition: transform 0.5s;
+	transform-origin: center;
+}
+.result_laki_card_item:not(.flipped) .card_inner {
+	transform: rotateY(0deg);
+}
+
+.result_laki_card_item.flipped .card_inner {
+	transform: rotateY(180deg);
+}
+
+.result_laki_card_item .card_b,
+.result_laki_card_item .card_a {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	backface-visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.result_laki_card_item .card_b {
+	background-image: url('path_to_front_image.jpg');
+	background-size: cover;
+}
+.result_laki_card_item .card_b img{
+	width: 100%;
+	height: auto;
+}
+
+.result_laki_card_item .card_a {
+	background-image: url('path_to_back_image.jpg');
+	background-size: cover;
+	transform: rotateY(180deg);
+}
+
+
+.result_laki_card_item img {
+	border-radius: 10px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+/*
+.laki_result_heading {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3%;
+}
+.laki_result_icon {
+	width: 15%;
+	text-align: center;
+	margin-right: 1%;
+}
+*/
+/*
+.laki_result_title {
+	flex: 1;
+	font-size: 26px;
+	color: #003F54
+}
+*/
+.laki_result_star {
+	display: flex;
+	justify-content: center;
+	width: 75%;
+	margin: 0 auto 8% auto;
+}
+.laki_result_star > li {
+	width: 20%;
+	padding: 0 1%;
+}
+.laki_result_box {
+	background: #89D6CA;
+	border-radius: 20px;
+	padding: 4%;
+}
+.laki_result_text {
+	font-size: 26px;
+	line-height: 1.8;
+}
+
+
+@media only screen and (max-width: 640px) {
+	/* ラキタロット_結果 */
+/*
+	.laki_result_title {
+	font-size: 4.11vw;
+	}
+*/
+	
+	/* ラキタロット_結果 */
+	.laki_result_text {
+	font-size: 4.11vw;
+	}
+	
+	
+}
+
+
+/* ------------------------------------
+	ラキタロットここまで
+------------------------------------*/
+
+/* ------------------------------------
+	365日タロットここから
+------------------------------------*/
+.tarot365_entry {
+	margin-bottom: 5%;
+}
+.section_365 .box_card_title {
+	bottom: 12%;
+	left: 36%;
+	font-size: 34px;
+	color: #FFF;
+}
+.spread_365 {
+	position: relative;
+	margin-bottom: 3%;
+}
+.spread_365_item {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 54%;
+}
+
+/* 相性の良いカード */
+.relation_card {
+	display: flex;
+	justify-content: center;
+	font-weight: 700;
+}
+.relation_card > li {
+	margin-right: 6%;
+	width: 38%;
+	text-align: center;
+}
+.relation_card > li:nth-child(2n) {
+	margin-right: 0;
+}
+.relation_card a {
+	color: inherit;
+}
+.relation_card_thm {
+	margin-bottom: 5%;
+}
+.relation_card_thm img {
+	border-radius: 10px;
+}
+.relation_card_name {
+	font-size: 14px;
+}
+.relation_card_text {
+	font-size: 24px;
+}
+
+@media only screen and (max-width: 640px) {
+	.section_365 .box_card_title {
+	font-size: 6.16vw;
+	}
+	
+	/* 相性の良いカード */
+	.relation_card_name {
+	font-size: 2.57vw;
+	}
+	.relation_card_text {
+	font-size: 3.59vw;
+	}
+
+}
+
+/* ------------------------------------
+	365日タロットここまで
+------------------------------------*/
+
+/* ------------------------------------
+	YESNOタロットここから
+------------------------------------*/
+.spread_yesno {
+	position: relative;
+	margin-bottom: 3%;
+}
+.spread_yesno .card_wrapper{
+	display: grid;
+	place-items: center;
+}
+.spread_yesno_item_start{
+	opacity:0;/* アニメーションの都合上、最初は非表示 */
+}
+.spread_yesno_item {
+	position: absolute;
+	width: 30%;
+}
+.spread_yesno .card_1 {
+	top: 30%;
+	left: 4%;
+	/* transform: translateY(-50%);  */
+}
+.spread_yesno .card_2 {
+	top: 30%;
+	left: 35%;
+	/* transform: translate(-50%,-50%); */
+}
+.spread_yesno .card_3 {
+	top: 30%;
+	left: 67%;
+	/* transform: translateY(-50%); */
+}
+@keyframes yesno_slideIn {
+    from {
+		opacity:0;
+        transform: translateX(-100%);
+    }
+    to {
+		opacity:1;
+        transform: translateX(0);
+    }
+}
+
+.spread_yesno_item {
+	/* opacity:0; */
+    animation-name: yesno_slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes yesno_selected {
+	from{
+		opacity: 1;
+		scale:1;
+	}
+    to {
+		opacity:1;
+		scale:2;
+        top:30%;
+		left:35%;
+    }
+}
+.start_yesno_selected{
+	animation:yesno_selected 1s forwards;
+	z-index: 1;
+}
+
+.spread_yesno_item.card_1 {
+    animation-delay: 0s;
+}
+
+.spread_yesno_item.card_2 {
+    animation-delay: 0.2s;
+}
+
+.spread_yesno_item.card_3 {
+    animation-delay: 0.4s;
+}
+
+.section_yesno .result_card .card_inner{
+    animation: flipCard 1s forwards;
+    transform-style: preserve-3d; 
+
+}
+
+.section_yesno .result_card {
+    perspective: 1000px;
+}
+
+.section_yesno .result_card .card_inner {
+	position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+
+}
+.section_yesno .result_card .card_inner:before{
+    content: "";
+    display: block;
+    padding-bottom: 140%;
+}
+
+.section_yesno .result_card .card_inner .card_a,
+.section_yesno .result_card .card_inner .card_b {
+    position: absolute;
+	top: 0;
+	top: 0;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden; /* 裏面を隠す */
+}
+
+.section_yesno .result_card .card_inner .card_b {
+    transform: rotateY(180deg);
+}
+
+@keyframes flipCard {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+
+.yesno_result_box {
+	background: #dcf3ef;
+	border-radius: 20px;
+	padding: 8%;
+	margin-bottom: 5%;
+}
+.yesno_result_catch {
+	text-align: center;
+	margin-bottom: 5%;
+	font-size: 26px;
+	color: #003F54;
+}
+.yesno_result_catch > strong {
+	font-size: 40px;
+}
+.yesno_result_text {
+	font-size: 26px;
+	line-height: 1.8;
+}
+.yesno_result_end {
+	text-align: center;
+	margin-top: 8%;
+	font-size: 32px;
+	color: #003F54;
+}
+
+@media only screen and (max-width: 640px) {
+	.yesno_result_catch {
+	font-size: 4.11vw;
+	}
+	.yesno_result_catch > strong {
+	font-size: 7.7vw;
+	}
+	.yesno_result_text {
+	font-size: 4.11vw;
+	}
+	.yesno_result_end {
+	font-size: 5.13vw;
+	}
+
+
+
+
+}
+
+/* ------------------------------------
+	YESNOタロットここまで
+------------------------------------*/
+
+/* ------------------------------------
+	レビュー系ここから
+------------------------------------*/
+.section_review {
+	background: url(../img/deco.png) repeat-x center top, url(../img/deco.png) repeat-x center bottom;
+	padding: 5% 0;
+}
+.review_head {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #003F54;
+	position: relative;
+}
+.review_head.js_ac_trigger::after {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f0d7";
+	position: absolute;
+	top: 50%;
+	right: 3%;
+	transform: translateY(-50%);
+	font-size: 30px;
+}
+.review_head.js_ac_trigger.open::after {
+	content: "\f0d8";
+}
+.review_title {
+	margin-right: 5%;
+	color: #003F54;
+	font-size: 26px;
+	font-weight: 700;
+}
+.review_average {
+	margin-right: 2%;
+}
+.review_total {
+	margin-left: 2%;
+}
+.review_list.hidden {
+	display: none;
+}
+.review_item {
+	margin-top: 3%;
+}
+.review_item:not(:first-child) {
+	border-top: 1px solid #D9D9D9;
+	padding-top: 3%;
+}
+.review_info {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #166D8A;
+}
+.review_star {
+	display: flex;
+	align-items: center;
+	color: #E9852F;
+}
+.review_star .off {
+	color: #A7A7A7;
+}
+.review_article {
+	background: #dcf3ef;
+	border-radius: 20px;
+	padding: 4%;
+}
+.review_subject {
+	font-size: 24px;
+}
+.review_text {
+	font-size: 24px;
+}
+.review_date {
+	margin-left: 3%;
+	font-size: 14px;
+	color: #C7C7C7;
+}
+.review_subinfo {
+	margin-top: 3%;
+}
+.review_link {
+	font-size: 24px;
+}
+.review_link a {
+	color: #166D8A;
+	text-decoration: underline;
+}
+
+/* 結果画面_レビューform */
+.review_form {
+	background: #FFF;
+	border-radius: 20px;
+	padding: 0 4% 4% 4%;
+}
+.review_form .form_text,
+.review_form .form_textarea {
+	border-radius: 0;
+	padding: 4% 0;
+}
+.review_form .form_text {
+	border-bottom: 1px solid #D9D9D9;
+}
+
+/* 星部分 */
+.review_rate_form {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5%;
+}
+.review_rate_form input[type=radio] {
+	display: none;
+}
+.review_rate_form label {
+	padding: 0 3%;
+	position: relative;
+	color: #A7A7A7;
+	cursor: pointer;
+	font-size: 70px;
+	line-height: 1;
+}
+.review_rate_form label:hover {
+	color: #E9852F;
+}
+.review_rate_form label:hover ~ label {
+	color: #E9852F;
+}
+.review_rate_form input[type=radio]:checked ~ label {
+	color: #E9852F
+}
+
+/* レビュー一覧 */
+.section_review_tab .tab_panel_wrap {
+	background: #FFF;
+	padding: 4% 5%;
+}
+.section_review_tab .review_item:first-child {
+	margin-top: 0;
+}
+.review_group {
+	margin-bottom: 5%;
+}
+.review_menu {
+	background: #dcf3ef;
+	border-radius: 20px;
+	padding: 2%;
+	margin-bottom: 3%;
+	display: flex;
+	align-items: center;
+}
+.section_review_tab .menu_list {
+	flex: 1;
+		overflow: hidden;
+}
+.section_review_tab .menu_item {
+	background: none;
+	border: none;
+	border-radius: 0;
+}
+.section_review_tab .menu_thm {
+	width: 20%;
+}
+.section_review_tab .menu_body {
+	padding: 0 2%;
+	overflow: hidden;
+}
+.section_review_tab .menu_title {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.review_more {
+	width: 20%;
+	text-align: center;
+}
+.review_more .btn {
+	display: block;
+	padding: 10px 0;
+}
+.section_review_tab .review_head {
+	background: url(../img/deco.png) repeat-x bottom center;
+	padding-bottom: 4%;
+	margin-bottom: 4%;
+}
+
+@media only screen and (max-width: 640px) {
+	.review_head {
+	font-size: 3.59vw;
+	}
+	.review_head.js_ac_trigger::after {
+	font-size: 4.62vw;
+	}
+	.review_title {
+	font-size: 4.11vw;
+	}
+	.review_info {
+	font-size: 3.59vw;
+	}
+	.review_subject {
+	font-size: 3.59vw;
+	}
+	.review_text {
+	font-size: 3.59vw;
+	}
+	.review_date {
+	font-size: 2.57vw;
+	}
+	.review_link {
+	font-size: 3.59vw;
+	}
+	
+	/* 星部分 */
+	.review_rate_form label {
+	font-size: 11.54vw;
+	}
+	
+	/* レビュー一覧 */
+	.review_more .btn {
+	padding: 5% 6%;
+	}
+	
+}
+
+/* ------------------------------------
+	レビュー系ここまで
+------------------------------------*/
+
+/* ------------------------------------
+	メニュー系ここから
+------------------------------------*/
+/* 通常型（左：サムネ／右：タイトル） */
+.menu_list { }
+.menu_item {
+	background: #FFF;
+	border: 2px solid #D9D9D9;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.menu_item:not(:last-child) {
+	margin-bottom: 3%;
+}
+.menu_item a {
+	display: flex;
+	align-items: center;
+	color: inherit;
+}
+.menu_thm {
+	width: 36%;
+}
+.menu_body {
+	padding: 0 3%;
+	flex: 1;
+}
+.menu_body .pv span{
+	background: #003F54;
+	color: #fff;
+	padding: 0 0.5em;
+}
+.menu_tag {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1%;
+	font-size: 14px;
+}
+.menu_tag > li:not(:last-child) {
+	margin-right: 2%;
+}
+.menu_tag > li::before {
+	content: "#";
+}
+.menu_title {
+	font-size: 30px;
+	line-height: 1.3;
+}
+.menu_date {
+	margin-top: 1%;
+	font-size: 14px;
+	color: #C7C7C7;
+}
+
+/* タイル型 */
+.tile_menu {
+	display: flex;
+	flex-wrap: wrap;
+}
+.tile_menu_item {
+	margin: 0 1px 1px 0;
+	width: calc( ( 100% - 2px ) / 3 );
+	text-align: center;
+}
+.tile_menu_item:nth-child(3n) {
+	margin-right: 0;
+}
+.tile_menu_item a {
+	display: block;
+	position: relative;
+	color: inherit;
+}
+.tile_menu_catch {
+	position: absolute;
+	top: 12%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	font-size: 12px;
+	font-weight: 700;
+	color: #F22B8F;
+}
+.tile_menu_title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	font-size: 20px;
+	line-height: 1.3;
+	color: #000;
+}
+.tile_menu_title > span {
+	color: #FF0000;
+}
+
+@media only screen and (max-width: 640px) {
+	/* 通常型（左：サムネ／右：タイトル） */
+	.menu_tag {
+	font-size: 2.06vw;
+	}
+	.menu_title {
+	font-size: 4.62vw;
+	}
+	.menu_date {
+	font-size: 2.57vw;
+	}
+
+	/* タイル型 */
+	.tile_menu_catch {
+	font-size: 1.8vw;
+	}
+	.tile_menu_title {
+	font-size: 3.08vw;
+	}
+
+
+}
+
+/* ------------------------------------
+	メニュー系ここまで
+------------------------------------*/
+
+/* ------------------------------------
+	入力ページここから
+------------------------------------*/
+.fortune_menu {
+	margin-bottom: 3%;
+	font-size: 32px;
+	line-height: 1.3;
+	color: #003F54;
+}
+.entry_box {
+	background: #FFF;
+	border-radius: 20px;
+	margin-bottom: 5%;
+	overflow: hidden;
+}
+.entry_box_head {
+	position: relative;
+}
+.entry_box_body {
+	padding: 4%;
+}
+.entry_box_name {
+	background: #003F54;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 68%;
+	padding: 3% 5%;
+	font-size: 26px;
+	color: #FFF;
+}
+.entry_box_name_sub {
+	font-size: 14px;
+}
+.entry_box_title {
+	margin-bottom: 3%;
+	font-size: 34px;
+	line-height: 1.3;
+	color: #003F54;
+}
+.entry_caption {
+	margin-bottom: 5%;
+	font-size: 24px;
+}
+
+/* スプレッド */
+.spread_box {
+	background: #FFF;
+	border-radius: 20px;
+	margin-bottom: 5%;
+	position: relative;
+
+}
+.spread_box_entry{
+	.btn_wrap{
+		position: absolute;
+		width: 80%;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+		
+	}
+	.card_select{
+		display: none;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 20px;
+		position: absolute;
+		width: 60%;
+		bottom: 10%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		padding: 2% 0;
+		font-size: 24px;
+		font-weight: 700;
+		text-shadow: 1px 0 3px #FFF, 1px 1px 3px #FFF, 0 1px 3px #FFF, -1px 1px 3px #FFF, -1px 0 3px #FFF, -1px -1px 3px #FFF, 0 -1px 3px #FFF, 1px -1px 3px #FFF;
+		color: #003F54;
+	}
+	@media only screen and (max-width: 640px) {
+	.card_select{
+	font-size: 3.59vw;
+	}
+	}
+}
+.spread_box_title {
+	text-align: center;
+	padding: 3% 0;
+	font-size: 24px;
+	font-weight: 700;
+	color: #003F54;
+}
+.spread_list {
+	position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.spread_item {
+	position: absolute;
+	& img{
+
+		border: 3px solid #FFF;
+		border-radius: 10px;
+		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+		box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+	}
+}
+.result_spread{
+	.card_wrap {
+		perspective: 1000px;
+		position: absolute;
+		width: 20%;
+		height: auto;
+		top: 0;
+		left: 0;
+	}
+	
+	.card_back, .card_front {
+		backface-visibility: hidden;
+		transition: transform 0.5s;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 0;
+		left: 0;
+	}
+	
+	.card_back {
+		transform: rotateY(0deg);
+	}
+	
+	.card_front {
+		transform: rotateY(180deg);
+	}
+	
+	.card_wrap.flipped{
+		.card_back {
+			transform: rotateY(-180deg);
+		}
+		.card_front {
+			transform: rotateY(0deg);
+			border-radius: 10px;
+		}
+	} 
+	
+	&.spread_10{
+		.cards_wrap{
+			.card_wrap{
+				width: 15%;
+				&:nth-of-type(1) {left: 0%;right: 0%;margin: auto;top: 74%;}
+				&:nth-of-type(2) {left: 0%;right: 0%;margin: auto;top: 52%;}
+				&:nth-of-type(3) {left: 0%;right: 0%;margin: auto;top: 30%;}
+				&:nth-of-type(4) {left: 26%;margin: auto;top: 52%;}
+				&:nth-of-type(5) {left: 9%;margin: auto;top: 42%;}
+				&:nth-of-type(6) {left: 26%;margin: auto;top: 30%;}
+				&:nth-of-type(7) {left: 0%;right: 0%;margin: auto;top: 7%;}
+				&:nth-of-type(8) {left: 59%;top: 30%;}
+				&:nth-of-type(9) {left: 75%;margin: auto;top: 41%;}
+				&:nth-of-type(10) {left: 59%;margin: auto;top: 52%;}
+			}
+		}
+	}
+	
+}
+
+@media only screen and (max-width: 640px) {
+	.fortune_menu {
+	font-size: 5.13vw;
+	}
+	.entry_box_name {
+	font-size: 4.10vw;
+	}
+	.entry_box_name_sub {
+	font-size: 2.31vw;
+	}
+	.entry_box_title {
+	font-size: 6.16vw;
+	}
+	.entry_caption {
+	font-size: 3.59vw;
+	}
+	
+	/* スプレッド */
+	.spread_box_title {
+	font-size: 3.59vw;
+	}
+	
+}
+
+
+/* ------------------------------------
+	入力ページここまで
+------------------------------------*/
+
+/* ------------------------------------
+	結果ページここから
+------------------------------------*/
+.result_date {
+	color: #C7C7C7;
+}
+
+
+/* 目次 */
+.section_index {
+	text-align: center;
+	
+}
+.index_title {
+	margin-bottom: 2%;
+	font-size: 32px;
+	font-weight: 700;
+	color: #166D8A;
+}
+.index_btn {
+	background: #166D8A;
+	border-radius: 100vh;
+	width: 50%;
+	margin: 0 auto;
+	padding: 2% 0;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 1;
+	color: #FFF;
+}
+.index_btn.js_ac_trigger::after {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f0d7";
+	margin-left: 5%;
+}
+
+.index_list {
+	text-align: left;
+}
+.index_list.hidden {
+	display: none;
+}
+.index_item {
+	border-bottom: 1px solid #89D6CA;
+	padding: 3% 0;
+	font-size: 24px;
+	font-weight: 500;
+}
+.index_list a {
+	color: inherit;
+}
+
+/* 小項目 */
+.result_title {
+	background: url(../img/deco.png) repeat-x bottom center;
+	padding: 1% 0 5% 0;
+	margin-bottom: 5%;
+	font-size: 34px;
+	line-height: 1.3;
+	color: #003F54;
+}
+.result_card {
+	width: 75%;
+	margin: 0 auto 3% auto;
+}
+.result_card img {
+	/*border: 5px solid #FFF;*/
+	border-radius: 10px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+.result_card_name {
+	background: #89D6CA;
+	width: 70%;
+	margin: 0 auto 5% auto;
+	padding: 5px;
+	text-align: center;
+	color: #FFF;
+}
+.result_text {
+	font-size: 24px;
+	line-height: 1.8;
+}
+
+/* 365日タロット占いの結果で使用 */
+.result_thm {
+	width: 75%;
+	margin: 0 auto 3% auto;
+	text-align: center;
+}
+.result_thm_caption {
+	text-align: center;
+	margin-bottom: 3%;
+	font-size: 24px;
+	font-weight: 700;
+}
+.spread_365_item img{
+	cursor: pointer;
+}
+
+/* ハウオリカード */
+.hauoli_head {
+	margin-bottom: -15%;
+}
+.hauoli_body {
+	background: #166D8A;
+	border-radius: 20px;
+	text-align: center;
+	padding: 12% 5% 5% 5%;
+	margin: 0 5%;
+	color: #FFF;
+}
+.hauoli_card {
+	margin-bottom: 3%;
+	position: relative;
+}
+.hauoli_card_item {
+	width: 68%;
+	position: absolute;
+	top: 72px;
+	left: 80px;
+}
+.hauoli_word {
+	margin-bottom: 3%;
+	font-size: 14px;
+	color: #89D6CA;
+}
+.hauoli_word_en {
+	font-size: 24px;
+}
+.hauoli_text {
+	background: url(../img/deco.png) repeat-x center top, url(../img/deco.png) repeat-x center bottom;
+	padding: 5% 0;
+	margin: 0 3% 5% 3%;
+	font-size: 34px;
+	line-height: 1.3;
+	color: #F3FF69;
+}
+.hauoli_exp {
+	margin-bottom: 3%;
+	font-size: 24px;
+}
+
+/* ハウオリカード_サイズ選択画面 */
+#hauoli_size .modal-content {
+	background: #166D8A;
+	/*width: 90%;*/
+/*
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+*/
+	/*max-height: 80vh;*/
+}
+#hauoli_size .modal-head {
+/*
+	top: 2.5%;
+	right: 6%;
+*/
+	color: #FFF;
+}
+#hauoli_size .modal-body {
+	color: #FFF;
+}
+#hauoli_size .hauoli_card_item {
+	width: 50%;
+	margin: 0 auto;
+	position: static;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 640px) {
+	.result_date {
+	font-size: 3.08vw;
+	}
+
+	/* 目次 */
+	.index_title {
+	font-size: 5.13vw;
+	}
+	.index_btn {
+	font-size: 4.62vw;
+	}
+	.index_item {
+	font-size: 4.11vw;
+	}
+
+	/* 小項目 */
+	.result_title {
+	font-size: 6.16vw;
+	}
+	.result_card_name {
+	padding: 1%;
+	font-size: 3.08vw;
+	}
+	.result_text {
+	font-size: 3.59vw;
+	}
+	
+	/* 365日タロット占いの結果で使用 */
+	.result_thm_caption {
+	font-size: 3.59vw;
+	}
+	
+	/* ハウオリカード */
+	.hauoli_card_item {
+	top: 11.54vw;
+	left: 12.31vw;
+	}
+	.hauoli_word {
+	font-size: 3.08vw;
+	}
+	.hauoli_word_en {
+	font-size: 3.59vw;
+	}
+	.hauoli_text {
+	font-size: 5.13vw;
+	}
+	.hauoli_exp {
+	font-size: 3.59vw;
+	}
+
+
+
+
+}
+
+/* ------------------------------------
+	結果ページここまで
+------------------------------------*/
+
+/* ------------------------------------
+	スプレッド配置系ここから
+------------------------------------*/
+/* 結果ページ_1枚用 */
+.spread_1 .card_1 {
+	width: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+/* 結果ページ_3枚用 */
+.spread_3 .card_1 {
+	width: 20%;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.spread_3 .card_2 {
+	width: 20%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.spread_3 .card_3 {
+	width: 20%;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* 結果ページ_4枚用 */
+
+
+/* ------------------------------------
+	スプレッド配置系ここまで
+------------------------------------*/
+
+/* ------------------------------------
+	サイトマップ_ここから
+------------------------------------*/
+.section_sitemap { }
+.section_sitemap a {
+	text-decoration: none;
+	color: inherit;
+}
+.section_sitemap ul {
+	margin-bottom: 30px;
+}
+.section_sitemap .par {
+	margin-bottom: 10px;
+/*font-size: 24px;*/
+	font-weight: bold;
+	line-height: 1;
+	color: #FFF;
+}
+.section_sitemap .par a {
+	background: #9E0000;
+	border-radius: 0 10px 10px 0;
+	padding: 15px;
+	display: block;
+	position: relative;
+}
+.section_sitemap .par a:hover {
+	background: #b63f3f;
+}
+.section_sitemap .par a:after {
+	content: '\f0a9';
+	font-family: 'FontAwesome';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-weight: normal;
+}
+.section_sitemap .par.top {
+	margin-bottom: 30px;
+}
+.section_sitemap .par.top a {
+	background: #00376E;
+}
+.section_sitemap .par.top a:hover {
+	background: #335f8b;
+}
+.section_sitemap .child {
+	border-bottom: 1px dashed #E8E9E9;
+}
+.section_sitemap .child a {
+	padding: 10px 10px 10px 35px;
+	display: block;
+	position: relative;
+}
+.section_sitemap .child a:hover {
+	color: #9E0000;
+}
+.section_sitemap .child a:before {
+	content: '\f111';
+	font-family: 'FontAwesome';
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: #9E0000;
+}
+
+@media only screen and (max-width: 640px) {
+	.section_sitemap .fluid_col_02 .fluid_col_item {
+	width: 100%;
+	margin-right: 0;
+	}
+	.section_sitemap ul {
+	margin-bottom: 5%;
+	}
+	.section_sitemap .par {
+	margin-bottom: 2%;
+	font-size: 3.75vw;
+	}
+	.section_sitemap .par a {
+	padding: 3%;
+	}
+	.section_sitemap .par a:after {
+	right: 3%;
+	}
+	.section_sitemap .par.top {
+	margin-bottom: 5%;
+	}
+	.section_sitemap .child a {
+	padding: 3% 3% 3% 6%;
+	}
+	.section_sitemap .child a:before {
+	left: 2%;
+	}
+
+}
+
+/* ------------------------------------
+	サイトマップ_ここまで
+------------------------------------*/
+
+
+/* コメント一覧 start */
+
+.comment_list {
+    margin-top: 20px;
+}
+
+.comment_item {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.comment_header {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.comment_meta {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.comment_date {
+    /* margin-right: 10px; */
+}
+
+.comment_source {
+    /* margin-left: 10px; */
+}
+
+.comment_source a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.comment_source a:hover {
+    text-decoration: underline;
+}
+
+.comment_title {
+    font-size: 1.1em;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.comment_text {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.comment_author {
+    font-size: 0.9em;
+    color: #666;
+    text-align: right;
+    font-style: italic;
+}
+
+.no_comment {
+    text-align: center;
+    color: #666;
+    padding: 30px 0;
+}
+
+.review_star {
+    display: flex;
+    align-items: center;
+}
+
+.review_star .star {
+    width: 20px;
+    height: 20px;
+    margin: 0 1px;
+}
+
+@media screen and (max-width: 768px) {
+    .comment_header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .review_star {
+        margin-top: 5px;
+    }
+}
+
+
+/* コメント一覧 end */
+
+/* ▲▲▲ここに各コーダーが別途作成したCSS内のスタイルをドッキングしていく▲▲▲ */
+
+
+
+
+
+
+
+
+/*==================================================================
+	98. AD setting（広告）
+===================================================================*/
+.ad_space {
+	text-align: center;
+}
+.ad_space_main {
+margin: 5% 3%;
+}
+
+
+/* 2つ並び広告 */
+/*
+.ad_area {
+	padding: 40px 0;
+}
+.ad_list {
+	font-size: 0;
+	text-align: center;
+}
+.ad_item {
+	width: 300px;
+	margin: 0 20px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	font-size: 14px;
+}
+*/
+
+
+
+
+
+
+/*==================================================================
+	99. SP
+===================================================================*/
+
+@media only screen and (max-width: 640px) {
+
+/*==================================================================
+	1. Base setting
+===================================================================*/
+/* ------------------------------------------------------------------
+	1-1. Base styles
+-------------------------------------------------------------------*/
+body {
+font-size: 3.59vw;/* 14px/390px */
+}
+	
+/* ------------------------------------------------------------------
+	1-2. Structure styles
+-------------------------------------------------------------------*/
+.container {
+max-width: 100%;
+}
+
+/*==================================================================
+	2. Layout setting
+===================================================================*/
+
+/* ------------------------------------------------------------------
+	2-1. Header styles
+-------------------------------------------------------------------*/
+.header {
+height: 25.64vw;
+}
+
+/* ------------------------------------------------------------------
+	2-1_1. SpNavi
+-------------------------------------------------------------------*/
+#sp_nav .modal-head {
+	width: 15.38vw;
+	height: 15.38vw;
+	top: -7.69vw;
+	}
+	#sp_nav .js_modal-close {
+	font-size: 7.7vw;
+	}
+	.sp_nav_list {
+	font-size: 3.59vw;
+	}
+		
+	
+	/* ハンバーガーメニューー */
+	.hamburger {
+	top: 2%;
+	right: 3%;
+	width: 15.38vw;
+	height: 15.38vw;
+	}
+	.hamburger_icon {
+	font-size: 5.13vw;
+	}
+	.hamburger_text {
+	font-size: 2.31vw;
+	}
+/* ------------------------------------------------------------------
+	2-2. GlobalNavi styles
+-------------------------------------------------------------------*/
+.gnav_item {
+font-size: 2.31vw;
+}
+
+.gnav.fixed {
+padding: 2% 0;
+}
+.gnav.fixed .gnav_item img {
+width: 12.82vw;
+}
+
+/* ------------------------------------------------------------------
+	2-3. Main styles
+-------------------------------------------------------------------*/
+.section.deco {
+margin: 15vw 0 8% 0;
+}
+.section.deco::before {
+top: -11.03vw;
+height: 11.03vw;
+}
+.section_icon {
+top: -2.56vw;
+left: 4%;
+font-size: 3.08vw;
+}
+.section_icon_item {
+padding: 0.77vw 2.56vw;
+}
+
+.box_card_title {
+font-size: 5.13vw;
+}
+.box_card_title_sub {
+font-size: 2.57vw;
+}
+
+
+.free_icon {
+width: 8.72vw;
+height: 8.72vw;
+font-size: 2.57vw;
+line-height: 8vw;
+}
+
+
+/* ------------------------------------------------------------------
+	2-4. Footer styles
+-------------------------------------------------------------------*/
+.footer {
+padding: 35vw 5% 5%  5%;
+}
+.fnav_sub_title {
+font-size: 4.11vw;
+}
+.copyright {
+font-size: 2.57vw;
+}
+
+
+
+
+
+
+
+
+}
+
+
