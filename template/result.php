@@ -104,7 +104,7 @@
 					<?php echo $val; ?>
 				</h2>
 				<?php if($card_data[$cid][$key]): ?>
-				<div class="result_card"><img src="<?php echo SERVICE_URL ?>img/card/<?php echo $card_data[$cid][$key] ?>.jpg" alt="HoloHoloタロット占い　‘I‘O（イオ）"></div>
+				<div class="result_card"><img src="<?php echo SERVICE_URL ?>img/card/<?php echo $card_data[$cid][$key] ?>.jpg" alt="<?php echo $card_info[$card_data[$cid][$key]]['kaki'] ?>（<?php echo $card_info[$card_data[$cid][$key]]['yomi'] ?>）"></div>
 				<div class="result_card_name"><?php echo $card_info[$card_data[$cid][$key]]['kaki'] ?><br>（<?php echo $card_info[$card_data[$cid][$key]]['yomi'] ?>）</div>
 				
 				<?php endif; ?>
