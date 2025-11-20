@@ -15,7 +15,7 @@
 		?>
 		<div class="menu_item">
 			<a href="<?php echo $the_contents['url']; ?>">
-				<div class="menu_thm"><img src="<?php echo SERVICE_URL; ?>img/category/<?php echo $the_category['name_e'] ?>.jpg" alt="HoloHoloタロット占い　<?php echo $the_category['name'] ?>"></div>
+				<div class="menu_thm"><img src="<?php echo SERVICE_URL; ?>img/category/<?php echo $the_category['name_e'] ?>.jpg" alt="HoloHoloタロット占い　<?php echo $the_category['name'] ?>" loading="lazy"></div>
 				<div class="menu_body">
 					<ul class="menu_tag">
 						<li><?php echo $the_category_group['name'] ?>占い</li>

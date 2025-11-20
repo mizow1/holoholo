@@ -14,7 +14,7 @@
 			//foreach($popular_data as $val): ?>
 			<div class="swiper-slide tile_menu_item">
 				<a href="<?php echo $val['url'] ?>">
-					<div class="tile_menu_img"><img src="<?php echo SERVICE_URL; ?>img/tile/<?php echo $val['category_data']['name_e'] ?>.jpg" alt="<?php echo $val['category_data']['name'] ?>"></div>
+					<div class="tile_menu_img"><img src="<?php echo SERVICE_URL; ?>img/tile/<?php echo $val['category_data']['name_e'] ?>.jpg" alt="<?php echo $val['category_data']['name'] ?>" loading="lazy"></div>
 					<div class="tile_menu_catch dispnone">\ 近未来恋愛運 /</div>
 					<h3 class="tile_menu_title">
 						<?php 

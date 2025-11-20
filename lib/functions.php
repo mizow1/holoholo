@@ -182,11 +182,14 @@ function card_data()
 }
 
 //おすすめメニュー
-function recommend_data()
+function recommend_data($contents_data = null)
 {
+	if (!$contents_data) {
+		$contents_data = contents_data();
+	}
 	$ids = [274, 273, 272];
 	foreach ($ids as $id) {
-		$a[] = contents_data()[$id];
+		$a[] = $contents_data[$id];
 	}
 	return $a;
 }
@@ -215,9 +218,11 @@ function theme_recommend_data($category_group = '', $category = '')
 }
 
 //新着メニューデータ
-function new_contents_data()
+function new_contents_data($contents_data = null)
 {
-	$contents_data = contents_data();
+	if (!$contents_data) {
+		$contents_data = contents_data();
+	}
 	$contents_data_new = $contents_data;
 	array_multisort(array_map("strtotime", array_column($contents_data_new, 'start_date')), SORT_DESC, $contents_data_new);
 	$today = date("Y-m-d H:i:s");
@@ -447,9 +452,9 @@ function birthday_data()
 }
 
 //タグ
-function keyword_data()
+function keyword_data($contents_data = null)
 {
-	$a = contents_data();
+	$a = $contents_data ? $contents_data : contents_data();
 	//各タグの個数集計
 	foreach ($a as $item) {
 		for ($i = 1; $i <= 5; $i++) {

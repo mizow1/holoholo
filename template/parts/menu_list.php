@@ -17,7 +17,7 @@
 					<?php foreach($category_menu as $val): ?>
 					<div class="menu_item">
 						<a href="<?php echo $val['url'] ?>">
-							<div class="menu_thm"><img src="<?php echo SERVICE_URL; ?>img/category/<?php echo $val['category_data']['name_e'] ?>.jpg" alt="HoloHoloタロット占い　<?php echo $val['category_data']['name'] ?>"></div>
+							<div class="menu_thm"><img src="<?php echo SERVICE_URL; ?>img/category/<?php echo $val['category_data']['name_e'] ?>.jpg" alt="HoloHoloタロット占い　<?php echo $val['category_data']['name'] ?>" loading="lazy"></div>
 							
 							<div class="menu_body">
 							<?php if($val['pv']): ?><div class="pv"><span><?php echo $val['pv'] ?>view</span></div><?php endif; ?>

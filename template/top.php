@@ -44,11 +44,11 @@
 				</div>
 				
 				<div class="spread_laki">
-					<div class="spread_laki_img"><img src="<?php echo SERVICE_URL; ?>img/spread_img.jpg" alt="今日のラキ(運)タロット占い"></div>
-					<div class="spread_laki_item card_1"><a href="<?php echo SERVICE_URL.'today/?card=1'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い"></a></div>
-					<div class="spread_laki_item card_2"><a href="<?php echo SERVICE_URL.'today/?card=2'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い"></a></div>
-					<div class="spread_laki_item card_3"><a href="<?php echo SERVICE_URL.'today/?card=3'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い"></a></div>
-					<div class="spread_laki_item card_4"><a href="<?php echo SERVICE_URL.'today/?card=4'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い"></a></div>
+					<div class="spread_laki_img"><img src="<?php echo SERVICE_URL; ?>img/spread_img.jpg" alt="今日のラキ(運)タロット占い" loading="lazy"></div>
+					<div class="spread_laki_item card_1"><a href="<?php echo SERVICE_URL.'today/?card=1'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い" loading="lazy"></a></div>
+					<div class="spread_laki_item card_2"><a href="<?php echo SERVICE_URL.'today/?card=2'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い" loading="lazy"></a></div>
+					<div class="spread_laki_item card_3"><a href="<?php echo SERVICE_URL.'today/?card=3'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い" loading="lazy"></a></div>
+					<div class="spread_laki_item card_4"><a href="<?php echo SERVICE_URL.'today/?card=4'; ?>"><img src="<?php echo SERVICE_URL; ?>img/today_laki_card.png" alt="HoloHoloタロット占い" loading="lazy"></a></div>
 				</div>
 				
 				<p class="align_center">今日の気分は…？<br>ピンときたカードを選んでね。</p>
@@ -101,7 +101,7 @@
 				<div class="section_icon_item">性格診断</div>
 			</div>
 			<div class="box_card">
-				<div class="box_card_img"><a href="<?php echo SERVICE_URL ?>birthday/"><img src="<?php echo SERVICE_URL; ?>img/feature_365.jpg" alt="誕生日からあなたの運命を読み解く　365日タロット占い"></a></div>
+				<div class="box_card_img"><a href="<?php echo SERVICE_URL ?>birthday/"><img src="<?php echo SERVICE_URL; ?>img/feature_365.jpg" alt="誕生日からあなたの運命を読み解く　365日タロット占い" loading="lazy"></a></div>
 				<div class="box_card_body">
 					あなたが選んだHoloHoloタロットカードから、あなたの性格診断をします♪
 				</div>
@@ -115,7 +115,7 @@
 				<div class="section_icon_item">性格診断</div>
 			</div>
 			<div class="box_card">
-				<div class="box_card_img"><a href="<?php echo SERVICE_URL ?>yesno/"><img src="<?php echo SERVICE_URL; ?>img/feature_yesno.jpg" alt="YES・NO　タロット占い"></a></div>
+				<div class="box_card_img"><a href="<?php echo SERVICE_URL ?>yesno/"><img src="<?php echo SERVICE_URL; ?>img/feature_yesno.jpg" alt="YES・NO　タロット占い" loading="lazy"></a></div>
 				<div class="box_card_body">
 					あなたが今抱える悩みを<br>YESかNOではっきりとお答えします♪
 				</div>

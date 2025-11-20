@@ -34,7 +34,7 @@ foreach($category_menu as $key=>$val){
 }
 
 //タグリスト
-$keyword_data = keyword_data();
+$keyword_data = keyword_data($contents_data);
 
 //おすすめメニュー
 $tpl->category_data = category_data();
@@ -42,9 +42,9 @@ $tpl->category_group_data = category_group_data();
 $tpl->contents_data = $contents_data;
 $tpl->category_menu = $category_menu;
 $tpl->comment_data = comment_data();
-$tpl->contents_data_new = new_contents_data();
-$tpl->recommend_data = recommend_data();
-$tpl->popular_data = popular_data();
+$tpl->contents_data_new = new_contents_data($contents_data);
+$tpl->recommend_data = recommend_data($contents_data);
+$tpl->popular_data = popular_data($contents_data);
 $tpl->nayami = nayami();
 $tpl->keyword_data = $keyword_data;
 $tpl->canonical=SERVICE_URL;

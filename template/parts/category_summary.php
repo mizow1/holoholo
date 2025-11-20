@@ -9,7 +9,7 @@
 	<?php if($category_menu[$val['name_e']]): ?>
 	<div class="category_box">
 		<div class="category_head">
-			<div class="category_img"><img src="<?php echo SERVICE_URL; ?>img/category_img_<?php echo $val['name_e'] ?>.jpg" alt="\ 今の恋を絶対に叶えたい人向け /今の恋を100倍幸せにする「恋愛占い」"></div>
+			<div class="category_img"><img src="<?php echo SERVICE_URL; ?>img/category_img_<?php echo $val['name_e'] ?>.jpg" alt="\ 今の恋を絶対に叶えたい人向け /今の恋を100倍幸せにする「恋愛占い」" loading="lazy"></div>
 			<div class="category_more">
 				<a href="<?php echo $val['url'] ?>"><?php echo $val['name'] ?>タロット占い一覧へ</a>
 			</div>
@@ -30,7 +30,7 @@
 				?>
 				<div class="tile_menu_item">
 					<a href="<?php echo $the_contents['url'] ?>">
-						<div class="tile_menu_img"><img src="<?php echo SERVICE_URL; ?>img/tile/<?php echo $the_contents['category_data']['name_e'] ?>.jpg" alt="恋の相性"></div>
+						<div class="tile_menu_img"><img src="<?php echo SERVICE_URL; ?>img/tile/<?php echo $the_contents['category_data']['name_e'] ?>.jpg" alt="恋の相性" loading="lazy"></div>
 						<div class="tile_menu_catch dispnone">\ すべての相性がわかる /</div>
 						<h3 class="tile_menu_title"><?php echo $a = $the_contents['catch']?$the_contents['catch']:$the_contents['name'] ?></h3>
 					</a>
