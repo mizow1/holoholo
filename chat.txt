@@ -1,2 +1,3 @@
 2025-11-10 18:27 要求：GitHubプッシュ（DB接続情報・アクセスログ除外）/ 処理結果：DB接続情報分離、.gitignore作成、496ファイルコミット＆プッシュ完了
 2025-11-10 18:30 要求：result.phpのカード画像alt属性を動的カード名に変更 / 処理結果：class="result_card"のimg alt属性を固定文字列からカード名変数に変更
+2025-11-20 14:02 要求：menu/メニュー一覧を50件ごとのページネーションに変更 / 処理結果：keyword_specified.php、menu_list.php、menu_list_comment.phpにページネーション機能を実装

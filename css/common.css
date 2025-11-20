@@ -1366,12 +1366,89 @@ font-size: 4.62vw;
 	display: inline-block !important;
 }
 
-	
-	
-	
-	
-	
 
+
+
+
+
+
+}
+
+/* ------------------------------------------------------------------
+	Pagination styles
+-------------------------------------------------------------------*/
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	margin-top: 30px;
+	padding: 20px 0;
+	flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 36px;
+	height: 36px;
+	padding: 0 10px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-size: 14px;
+	transition: all 0.3s ease;
+}
+
+.pagination a {
+	background: #f5f5f5;
+	color: #333;
+	border: 1px solid #ddd;
+}
+
+.pagination a:hover {
+	background: #e0e0e0;
+	border-color: #ccc;
+}
+
+.pagination_current {
+	background: #7b68ee !important;
+	color: #fff !important;
+	border: 1px solid #7b68ee !important;
+	font-weight: bold;
+}
+
+.pagination_prev,
+.pagination_next {
+	font-weight: bold;
+}
+
+.pagination_numbers {
+	display: flex;
+	gap: 4px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.pagination_dots {
+	color: #999;
+	border: none !important;
+	background: none !important;
+}
+
+@media screen and (max-width: 767px) {
+	.pagination {
+		gap: 4px;
+	}
+
+	.pagination a,
+	.pagination span {
+		min-width: 32px;
+		height: 32px;
+		font-size: 12px;
+		padding: 0 6px;
+	}
 }
 
 

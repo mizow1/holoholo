@@ -1,8 +1,7 @@
 <div class="tab_panel_wrap">
 	<?php if($category_menu): ?>
 		<?php
-		for($i=0;$i<10;$i++):
-		$val = $category_menu[$i];
+		foreach($category_menu as $val):
 		if(count($val['comment_data'])):
 		?>
 		<div class="review_group">
@@ -62,7 +61,49 @@
 			</div><!-- //review_list -->
 		</div><!-- //review_group -->
 		<?php endif; ?>
-		<?php endfor; ?>
+		<?php endforeach; ?>
+
+		<?php if($total_pages > 1): ?>
+		<div class="pagination">
+			<?php
+			$order = isset($_GET['order']) ? $_GET['order'] : 'comment';
+			$base_url = $now_url . 'order=' . $order;
+			?>
+
+			<?php if($current_page > 1): ?>
+			<a href="<?php echo $base_url . '&page=' . ($current_page - 1) . '#menu_list'; ?>" class="pagination_prev">前へ</a>
+			<?php endif; ?>
+
+			<div class="pagination_numbers">
+				<?php
+				$start_page = max(1, $current_page - 2);
+				$end_page = min($total_pages, $current_page + 2);
+
+				if($start_page > 1): ?>
+				<a href="<?php echo $base_url . '&page=1#menu_list'; ?>">1</a>
+				<?php if($start_page > 2): ?><span class="pagination_dots">...</span><?php endif; ?>
+				<?php endif; ?>
+
+				<?php for($i = $start_page; $i <= $end_page; $i++): ?>
+				<?php if($i == $current_page): ?>
+				<span class="pagination_current"><?php echo $i; ?></span>
+				<?php else: ?>
+				<a href="<?php echo $base_url . '&page=' . $i . '#menu_list'; ?>"><?php echo $i; ?></a>
+				<?php endif; ?>
+				<?php endfor; ?>
+
+				<?php if($end_page < $total_pages): ?>
+				<?php if($end_page < $total_pages - 1): ?><span class="pagination_dots">...</span><?php endif; ?>
+				<a href="<?php echo $base_url . '&page=' . $total_pages . '#menu_list'; ?>"><?php echo $total_pages; ?></a>
+				<?php endif; ?>
+			</div>
+
+			<?php if($current_page < $total_pages): ?>
+			<a href="<?php echo $base_url . '&page=' . ($current_page + 1) . '#menu_list'; ?>" class="pagination_next">次へ</a>
+			<?php endif; ?>
+		</div>
+		<?php endif; ?>
+
 		<?php endif; ?>
 
 </div>
