@@ -16,7 +16,7 @@
 					<?php if($category_menu): ?>
 					<?php foreach($category_menu as $val): ?>
 					<div class="menu_item">
-						<a href="<?php echo $val['url'] ?>">
+						<a href="<?php echo $val['url'] . (isset($_GET['prev']) ? '&prev' : '') ?>">
 							<div class="menu_thm"><img src="<?php echo SERVICE_URL; ?>img/category/<?php echo $val['category_data']['name_e'] ?>.jpg" alt="HoloHoloタロット占い　<?php echo $val['category_data']['name'] ?>" loading="lazy"></div>
 							
 							<div class="menu_body">

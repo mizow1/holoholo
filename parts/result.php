@@ -9,7 +9,9 @@ if ($_GET['menu']) {
 }
 
 $category_data = category_data();
-$contents_data = contents_data();
+// prevパラメータがある場合は公開日が未来のメニューも含める
+$include_future = isset($_GET['prev']);
+$contents_data = contents_data($include_future);
 $menu_data_tmp = menu_data($cid);
 
 foreach ($menu_data_tmp[$cid] as $val) {

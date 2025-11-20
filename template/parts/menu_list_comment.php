@@ -8,7 +8,7 @@
 			<div class="review_menu">
 				<div class="menu_list">
 					<div class="menu_item">
-						<a href="<?php echo $val['url'] ?>">
+						<a href="<?php echo $val['url'] . (isset($_GET['prev']) ? '&prev' : '') ?>">
 							<div class="menu_thm"><img src="<?php echo SERVICE_URL ?>img/category/aitenokimochi.jpg" alt="HoloHoloタロット占い　相手の気持ち"></div>
 							<div class="menu_body">
 								<ul class="menu_tag"><li><?php echo $val['category_group_data']['name'] ?></li><li>無料占い</li><li><?php echo $val['category_data']['name'] ?></li></ul>
@@ -20,7 +20,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="review_more"><a href="<?php echo $val['url'] ?>" class="btn btn_3">占う</a></div>
+				<div class="review_more"><a href="<?php echo $val['url'] . (isset($_GET['prev']) ? '&prev' : '') ?>" class="btn btn_3">占う</a></div>
 			</div>
 
 			<div class="review_head">

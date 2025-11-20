@@ -3,7 +3,9 @@ session_start();
 $_SESSION['seed'] = intval(time());//結果ページリロード時はカード変えないため
 
 $contents_id = $_GET['menu'];
-$contents_data = contents_data();
+// prevパラメータがある場合は公開日が未来のメニューも含める
+$include_future = isset($_GET['prev']);
+$contents_data = contents_data($include_future);
 
 foreach($contents_data as $val){
 	if($val['contents_id']==$contents_id){

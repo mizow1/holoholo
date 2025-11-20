@@ -126,7 +126,7 @@
 			<div class="btn_wrap">
 				<button type="button" class="btn btn_1 btn_fix mb_4 shuffle_start">シャッフルする</button>
 				<button type="button" class="btn btn_2 btn_fix shuffle_end">カードを配る</button>
-				<a href="<?php echo SERVICE_URL.$the_category_group_data['name_e'].'/'.$the_category_data['name_e'] ?>/?menu=<?php echo $the_contents_data['contents_id'] ?>&mode=result" class="btn btn_3 btn_fix go_result">鑑定結果を見る</a>
+				<a href="<?php echo SERVICE_URL.$the_category_group_data['name_e'].'/'.$the_category_data['name_e'] ?>/?menu=<?php echo $the_contents_data['contents_id'] ?>&mode=result<?php echo isset($_GET['prev']) ? '&prev' : '' ?>" class="btn btn_3 btn_fix go_result">鑑定結果を見る</a>
 			</div>
 		</div>
 		<!-- /.spread_box -->
