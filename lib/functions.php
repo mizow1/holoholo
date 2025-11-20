@@ -28,7 +28,7 @@ function db_select($pdo, $sql)
 }
 
 
-function contents_data()
+function contents_data($include_future = false)
 {
 	$sql = "SELECT * FROM mana_contents";
 	// $tmp = my_db_connect($sql);
@@ -52,8 +52,8 @@ function contents_data()
 	$category_group_data = category_group_data();
 
 	foreach ($contents_data as $key => $val) {
-		//公開前メニューは除外
-		if (strtotime($val['start_date']) < time()) {
+		//公開前メニューは除外（$include_futureがtrueの場合は全て含める）
+		if ($include_future || strtotime($val['start_date']) < time()) {
 			$contents_data2[$key] = $val;
 			$contents_data2[$key]['category_data'] = $category_data[$val['category_id']];
 			$contents_data2[$key]['category_group_data'] = $category_group_data[$contents_data2[$key]['category_data']['category_group_id']];

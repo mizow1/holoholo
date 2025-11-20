@@ -2,17 +2,25 @@
 //指定キーワード
 $keyword = $_GET['keyword'];
 
-$contents_data = contents_data();
-foreach ($contents_data as $val) {
-	$filter_keyword = [$val['tag_1'],$val['tag_2'],$val['tag_3'],$val['tag_4'],$val['tag_5'],$val['category_data']['name'],$val['category_group_data']['name']];
-	if (in_array($keyword,$filter_keyword)) {
-		$category_menu[] = $val;
-	}
+// prevパラメータがある場合は公開日が未来のメニューも含める
+$include_future = isset($_GET['prev']);
+$contents_data = contents_data($include_future);
 
-	//指定キーワードが無料占い、タロットの場合は全メニューを表示
-	$all_menu_keyword = ['無料占い','タロット占い'];
-	if(in_array($keyword,$all_menu_keyword)){
-		$category_menu = $contents_data;
+// prevパラメータがあってキーワードが空の場合は全メニューを表示
+if ($include_future && !$keyword) {
+	$category_menu = $contents_data;
+} else {
+	foreach ($contents_data as $val) {
+		$filter_keyword = [$val['tag_1'],$val['tag_2'],$val['tag_3'],$val['tag_4'],$val['tag_5'],$val['category_data']['name'],$val['category_group_data']['name']];
+		if (in_array($keyword,$filter_keyword)) {
+			$category_menu[] = $val;
+		}
+
+		//指定キーワードが無料占い、タロットの場合は全メニューを表示
+		$all_menu_keyword = ['無料占い','タロット占い'];
+		if(in_array($keyword,$all_menu_keyword)){
+			$category_menu = $contents_data;
+		}
 	}
 }
 
