@@ -237,25 +237,51 @@ function new_contents_data()
 function popular_data($menu_data = '')
 {
 	$menu_data = $menu_data ? $menu_data : contents_data();
-	$file = fopen(SERVICE_PATH . 'holoholo_access_log.csv', 'r');
-	while ($data = fgetcsv($file)) {
-		mb_convert_variables('UTF-8', 'SJIS', $data); //ファイルがSJISなら
-		$tmp[] = $data;
-	}
-	fclose($file);
 
-	foreach ($tmp as $item) {
-		$url = $item[2];
-		if (preg_match('/\?menu=(\d+)/', $url, $matches)) {
-			$menuNumber = intval($matches[1]);
-			if (isset($menuCounts[$menuNumber])) {
-				$menuCounts[$menuNumber]++;
-			} else {
-				$menuCounts[$menuNumber] = 1;
-			}
+	// キャッシュファイルのパスと有効期限（1時間）
+	$cache_file = SERVICE_PATH . 'cache/popular_counts.json';
+	$cache_duration = 3600;
+
+	// キャッシュディレクトリが存在しない場合は作成
+	$cache_dir = SERVICE_PATH . 'cache';
+	if (!file_exists($cache_dir)) {
+		mkdir($cache_dir, 0755, true);
+	}
+
+	// キャッシュが有効かチェック
+	$use_cache = false;
+	if (file_exists($cache_file)) {
+		$cache_time = filemtime($cache_file);
+		if ((time() - $cache_time) < $cache_duration) {
+			$use_cache = true;
 		}
 	}
-	arsort($menuCounts);
+
+	if ($use_cache) {
+		// キャッシュから読み込み
+		$menuCounts = json_decode(file_get_contents($cache_file), true);
+	} else {
+		// CSVから集計
+		$menuCounts = [];
+		$file = fopen(SERVICE_PATH . 'holoholo_access_log.csv', 'r');
+		while ($data = fgetcsv($file)) {
+			mb_convert_variables('UTF-8', 'SJIS', $data);
+			$url = $data[2];
+			if (preg_match('/\?menu=(\d+)/', $url, $matches)) {
+				$menuNumber = intval($matches[1]);
+				if (isset($menuCounts[$menuNumber])) {
+					$menuCounts[$menuNumber]++;
+				} else {
+					$menuCounts[$menuNumber] = 1;
+				}
+			}
+		}
+		fclose($file);
+		arsort($menuCounts);
+
+		// キャッシュに保存
+		file_put_contents($cache_file, json_encode($menuCounts));
+	}
 
 	foreach ($menu_data as $key => $val) {
 		$menu_data[$key]['pv'] = $menuCounts[$val['contents_id']];
