@@ -7,7 +7,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*	Scrolltop
 /*-----------------------------------------------------------------------------------*/
-$(document).ready(function($) {
+$(document).ready(function ($) {
 
 	var pagetop = $('#js_pagetop');
 	pagetop.hide();
@@ -28,25 +28,27 @@ $(document).ready(function($) {
 /*-----------------------------------------------------------------------------------*/
 /*	SP_FIXED_MENU
 /*-----------------------------------------------------------------------------------*/
-$(function(){
-	var menu = $('.logo'),
-			offset = menu.offset();
-	$(window).scroll(function () {
-		if($(window).scrollTop() > offset.top) {
-			menu.addClass('fixed');
-		} else {
-			menu.removeClass('fixed');
-		}
-	});
+$(function () {
+	var menu = $('.logo');
+	if (menu.length) {
+		var offset = menu.offset();
+		$(window).scroll(function () {
+			if ($(window).scrollTop() > offset.top) {
+				menu.addClass('fixed');
+			} else {
+				menu.removeClass('fixed');
+			}
+		});
+	}
 });
 
 /*-----------------------------------------------------------------------------------*/
 /*	RANKING_SLIDE
 /*-----------------------------------------------------------------------------------*/
-$(function() {
+$(function () {
 	var swiper = new Swiper("#ranking_slide", {
-//		centeredSlides: true,
-//		loop: true,
+		//		centeredSlides: true,
+		//		loop: true,
 		speed: 1000,
 		slidesPerView: 2.5,
 		spaceBetween: 1,
@@ -56,27 +58,27 @@ $(function() {
 			el: ".swiper-pagination",
 			clickable: true,
 		},
-//		navigation: {
-//			nextEl: ".swiper-button-next",
-//			prevEl: ".swiper-button-prev",
-//		},
+		//		navigation: {
+		//			nextEl: ".swiper-button-next",
+		//			prevEl: ".swiper-button-prev",
+		//		},
 	});
 });
 
 /*-----------------------------------------------------------------------------------*/
 /*	REVIEW_SLIDE
 /*-----------------------------------------------------------------------------------*/
-$(function() {
+$(function () {
 	var swiper = new Swiper("#review_slide", {
-//		centeredSlides: true,
+		//		centeredSlides: true,
 		loop: true,
 		speed: 1000,
 		slidesPerView: 1,
 		spaceBetween: 30,
-//		autoplay: {
-//			delay: 3000,
-//			disableOnInteraction: false,
-//		},
+		//		autoplay: {
+		//			delay: 3000,
+		//			disableOnInteraction: false,
+		//		},
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true,
@@ -91,7 +93,7 @@ $(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	Accordion
 /*-----------------------------------------------------------------------------------*/
-$(function() {
+$(function () {
 	$('.js_ac_trigger').on('click', function () {
 		$(this).next().slideToggle(300);
 		$(this).toggleClass('open', 300);
@@ -101,8 +103,8 @@ $(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	TAB_MENU
 /*-----------------------------------------------------------------------------------*/
-$(function() {
-	$('.js-tab .tab_btn').on('click', function() {
+$(function () {
+	$('.js-tab .tab_btn').on('click', function () {
 		var tabMenu = $(this).parents('.tab_menu');
 		var tabBtn = tabMenu.find(".tab_btn");
 		var tabPanel = tabMenu.find('.tab_panel');
@@ -117,7 +119,7 @@ $(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	Modal
 /*-----------------------------------------------------------------------------------*/
-$(function() {
+$(function () {
 	const modalBtns = document.querySelectorAll(".js_modal-toggle");
 	modalBtns.forEach(function (btn) {
 		btn.onclick = function () {
@@ -144,12 +146,12 @@ $(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	繧ｭ繝ｼ繝ｯ繝ｼ繝峨°繧画爾縺呻ｼ磯幕髢会ｼ�
 /*-----------------------------------------------------------------------------------*/
-$(function(){
-	$(".js_more").on("click", function() {
+$(function () {
+	$(".js_more").on("click", function () {
 		$(this).toggleClass("on-click");
 		$(".js_more_panel").slideToggle();
 	});
-}); 
+});
 
 
 
